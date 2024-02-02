@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {NotFoundComponent} from "./not-found/not-found.component";
+import {NotFoundComponent} from "./_pages/not-found/not-found.component";
 import {CustomerComponent} from "./_pages/customer/customer.component";
 import {ConfigurationListComponent} from "./_pages/customer/configuration-list/configuration-list.component";
 import {ConfigurationComponent} from "./_pages/customer/configuration/configuration.component";
