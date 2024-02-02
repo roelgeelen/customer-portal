@@ -1,0 +1,16 @@
+<div class="page">
+  @if (themeService.theme$|async;as theme) {
+    <div class="form-header">
+      <div class="logo"><img [src]="theme?.imageDark??'../../../../assets/images/logo_zwart.png'" alt="logo"></div>
+      <div class="title">
+
+        <h1>{{ title }}</h1>
+        <small>{{ subtitle }}</small>
+
+      </div>
+      <div class="settings-btn">
+      </div>
+    </div>
+  }
+  <ng-content></ng-content>
+</div>

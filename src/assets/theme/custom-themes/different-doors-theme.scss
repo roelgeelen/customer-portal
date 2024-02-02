@@ -1,0 +1,104 @@
+@use '../../../../node_modules/@angular/material/index' as mat;
+@use 'sass:map';
+@use "../components.style" as components;
+@use "./warn.scss" as warn;
+
+
+@include mat.core();
+
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+$background-color: #fafafa;
+$background-accent-color: #ebf2f4;
+
+$palette: (
+  50 : #e7eaf3,
+  100 : #c2cae1,
+  200 : #99a6ce,
+  300 : #7082ba,
+  400 : #5268ab,
+  500 : #334d9c,
+  600 : #2e4694,
+  700 : #273d8a,
+  800 : #203480,
+  900 : #14256e,
+  A100 : #a6b3ff,
+  A200 : #7388ff,
+  A400 : #405dff,
+  A700 : #2647ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$accent: (
+  50 : #e1f4ef,
+  100 : #b5e4d7,
+  200 : #83d2bc,
+  300 : #51bfa1,
+  400 : #2cb28d,
+  500 : #07a479,
+  600 : #069c71,
+  700 : #059266,
+  800 : #04895c,
+  900 : #027849,
+  A100 : #a6ffd6,
+  A200 : #73ffbf,
+  A400 : #40ffa8,
+  A700 : #26ff9c,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$primary: mat.define-palette($palette);
+$accent: mat.define-palette($accent);
+$warn: mat.define-palette(warn.$md-warn);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+$background: map-get($theme, background);
+$background: map_merge($background, (
+  background: $background-color,
+  background-accent:$background-accent-color
+));
+$theme: map_merge($theme, (background: $background));
+
+
+@include mat.all-component-themes($theme);
+@include components.theme($theme);
+
