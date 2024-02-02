@@ -27,10 +27,24 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/routes.json"
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "src/styles.scss",
+                "inject": true
+              },
+              {
+                "input": "src/assets/theme/custom-themes/different-doors-theme.scss",
+                "bundleName": "different-doors-theme",
+                "inject": false
+              },
+              {
+                "input": "src/assets/theme/custom-themes/ambassa-theme.scss",
+                "bundleName": "ambassa-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           },

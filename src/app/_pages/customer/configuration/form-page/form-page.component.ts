@@ -5,7 +5,7 @@ import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {ITheme, ThemeService} from "../../../_helpers/theme.service";
+import {ITheme, ThemeService} from "../../../../_helpers/theme.service";
 import {AsyncPipe} from "@angular/common";
 
 @Component({

@@ -1,0 +1,46 @@
+mat-toolbar {
+  height: auto;
+  background-color: white;
+  .logo {
+    height: 80px;
+    padding: 10px;
+  }
+}
+.banner {
+  .container-fluid {
+    max-width: none;
+  }
+}
+.banner-image {
+  background-image: url(https://info.differentdoors.nl/hubfs/page-header-1.jpg);
+  background-size: cover;
+  min-height: 55px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+main {
+  .container-fluid{
+    width: 100%;
+    padding: 48px 15px;
+  }
+}
+
+.site-footer {
+  background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    .copyright-text {
+      color: #ccc;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

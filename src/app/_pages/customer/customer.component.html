@@ -1,0 +1,29 @@
+@if (themeService.theme$|async;as theme) {
+  <header class="container-fluid">
+    <mat-toolbar>
+      <img [src]="theme.imageDark" alt="Logo" class="logo">
+    </mat-toolbar>
+  </header>
+  <div class="banner">
+    <div class="container-fluid">
+      <div class="banner-image"></div>
+    </div>
+  </div>
+  <main>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container container-fluid">
+      <div class="site-info">
+        <div class="copyright-text">
+          © 2023 Different Doors - Uw specialist in garagedeuren -
+          <a href="https://www.differentdoors.nl/privacy-policy/">Privacy policy</a> |
+          <a href="https://garagedeuren.s3.amazonaws.com/20200916110943/Algemene-voorwaarden-Different-Doors-B.V..pdf"
+             target="_blank" rel="noopener">Algemene voorwaarden</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+}

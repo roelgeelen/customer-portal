@@ -1,0 +1,17 @@
+.dnd-section {
+  padding: 0 20px;
+  .min-height {
+    min-height: calc(100vh - 439px);
+    .divider{
+      border-top: 5px solid;
+    }
+    .mat-mdc-row:hover .mat-mdc-cell {
+      background-color: #eaeaea;
+      cursor: pointer;
+    }
+    .mat-mdc-header-row {
+      font-size: 16px;
+    }
+
+  }
+}

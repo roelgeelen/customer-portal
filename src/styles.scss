@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use "assets/theme/components.style" as components;
+@include mat.core();
+@import "./assets/theme/responsive.style";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: proxima-nova, "Helvetica Neue", sans-serif; }
+:host {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+}
+.container-fluid {
+  margin: 0 auto;
+}
+mat-spinner {
+  margin: 10px auto;
+}
