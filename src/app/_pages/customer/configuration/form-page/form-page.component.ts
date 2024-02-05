@@ -24,7 +24,7 @@ import {AsyncPipe} from "@angular/common";
     MatSuffix,
     AsyncPipe
   ],
-  styleUrl: './form-page.component.scss'
+  styleUrls: ['./form-page.component.scss', '../print.scss']
 })
 export class FormPageComponent implements OnInit{
   @Input() title: string = '';

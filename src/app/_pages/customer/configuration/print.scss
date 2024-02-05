@@ -1,0 +1,58 @@
+@page
+{
+  size: A4;
+  margin: 15mm 4mm 12mm 0;
+}
+@media print {
+  .btn-print {
+    visibility: hidden !important;
+  }
+  .breadcrumb {
+    display: none;
+  }
+  .form {
+    padding: 0 !important;
+  }
+  .page {
+    margin: 0 !important;
+    box-shadow: none;
+    width: 100% !important;
+
+    .form-header {
+      .logo {
+        img {
+          width: 150px;
+        }
+      }
+
+      .title {
+        display: flex;
+
+        h1 {
+          width: 100%;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+
+      small {
+        display: none;
+      }
+    }
+
+    .form-content {
+      font-size: 15px;
+    }
+  }
+  .form-section {
+    page-break-inside: avoid !important;
+  }
+  .section {
+    page-break-inside: avoid !important;
+    //max-height: 900px;
+    //img {
+    //  width: auto;
+    //
+    //}
+  }
+}

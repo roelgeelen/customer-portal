@@ -22,16 +22,16 @@ export class ThemeService {
   static defaultTheme: ITheme = {
     displayName: 'Different Doors',
     name: 'different-doors-theme',
-    imageDark: 'assets/images/different-doors-black.png',
-    imageLight: 'assets/images/different-doors-white.png',
+    imageDark: 'assets/images/logos/different-doors-black.png',
+    imageLight: 'assets/images/logos/different-doors-white.png',
   };
   themes: ITheme[] = [
     ThemeService.defaultTheme,
     {
       displayName: 'Ambassa',
       name: 'ambassa-theme',
-      imageDark: 'assets/images/ambassa-black.png',
-      imageLight: 'assets/images/ambassa-white.png',
+      imageDark: 'assets/images/logos/ambassa-black.png',
+      imageLight: 'assets/images/logos/ambassa-white.png',
     }
   ];
 

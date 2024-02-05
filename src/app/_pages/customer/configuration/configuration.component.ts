@@ -3,7 +3,7 @@ import {FormPageComponent} from "./form-page/form-page.component";
 import {ApiService} from "../../../_services/api.service";
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {IConfiguration} from "../../../_models/configuration.interface";
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {DomSanitizer, SafeResourceUrl, Title} from "@angular/platform-browser";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {SafeHtmlPipe} from "../../../_helpers/pipes/safe-html.pipe";
 import {MatButton, MatFabButton} from "@angular/material/button";
@@ -22,17 +22,19 @@ import {MatIconModule} from "@angular/material/icon";
     MatIconModule
   ],
   templateUrl: './configuration.component.html',
-  styleUrl: './configuration.component.scss'
+  styleUrls:['./configuration.component.scss', './print.scss']
 })
 export class ConfigurationComponent {
   configuration: IConfiguration | null = null;
   safe3dUrl: SafeResourceUrl = '';
-  constructor(private apiService: ApiService, private route: ActivatedRoute, private sanitizer: DomSanitizer) {
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private title: Title) {
     this.route.paramMap.subscribe(params => {
       if (params.get('configId')) {
         this.apiService.getConfiguration(params.get('id')!, params.get('configId')!).subscribe(c=>{
-          console.log(c)
           this.configuration = c;
+          if (this.configuration.customer.dealId != null) {
+            this.title.setTitle('P'+this.configuration.customer.dealId + ' - '+ this.configuration.customer.name)
+          }
           if (this.configuration?.preview?.url3D) {
             this.getSafeUrl(this.configuration?.preview?.url3D)
           }

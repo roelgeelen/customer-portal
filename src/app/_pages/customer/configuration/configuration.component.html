@@ -42,8 +42,12 @@
                     <hr>
                   }
                   @case ('ImageUpload') {
-                    <h2 class="break">{{ value.title }}</h2>
-                    <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
+                    <div class="section">
+                      <h2 class="break">{{ value.title }}</h2>
+                      <div class="image-container">
+                        <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
+                      </div>
+                    </div>
                   }
                   @case ('FileUpload') {
                     <h2 class="break">{{ value.title }}</h2>
@@ -90,6 +94,8 @@
                                 }
                                 {{ value.columns[index].value }}
                               </td>
+                            } @else {
+                              <td></td>
                             }
                           }
                         } @else if (!value.columns) {
