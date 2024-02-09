@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -38,6 +38,7 @@ import {MatIconModule} from "@angular/material/icon";
   styleUrl: './configuration-list.component.scss'
 })
 export class ConfigurationListComponent implements OnInit {
+  @Input() id: string = '';
   displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
@@ -48,24 +49,21 @@ export class ConfigurationListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      if (params.get('id')) {
-        this.apiService.getCustomer(params.get('id')!).subscribe({
-          next: (c) => {
-            this.customer = c;
-            this.getConfigurations();
-          }, error: (_) => {
-            this.router.navigate(['/']);
-          }
-        })
+    this.apiService.getCustomer(this.id).subscribe({
+      next: (c) => {
+        this.customer = c;
+        this.getConfigurations();
+      }, error: (_) => {
+        this.router.navigate(['/']);
       }
-    });
+    })
+
   }
 
   getConfigurations() {
     this.loading = true;
     this.error = false;
-    this.apiService.getConfigurations(this.customer!.dealId!).subscribe({
+    this.apiService.getConfigurations(this.id).subscribe({
       next: (c) => {
         this.configurations = c;
       },

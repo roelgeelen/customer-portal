@@ -20,7 +20,7 @@ export class ApiService {
     return this.http.get<IConfiguration[]>(`${environment.apiUrl}/public/customer/${id}/configurations`);
   }
 
-  getConfiguration(id: string, configId: string) {
-    return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}`);
+  getConfiguration(id: string, configId: string, isExtern: boolean) {
+    return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}?extern=${isExtern}`);
   }
 }

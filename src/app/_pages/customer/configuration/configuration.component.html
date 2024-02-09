@@ -5,13 +5,30 @@
   <div class="form">
     <div class="breadcrumb">
       <span>
-        <a [routerLink]="'/customers/'+configuration?.customer?.dealId!" class="primary-text">Alle configuraties</a>
+        <a [routerLink]="'/customers/'+id" class="primary-text">Alle configuraties</a>
       </span>
       /
       <span>{{ configuration?.title }}</span>
     </div>
     <app-form-page [title]="configuration?.title??''" [subtitle]="configuration?.customer?.name??''">
       @defer (when configuration) {
+        <div class="form-section">
+          <br>
+          <table>
+            <tr>
+              <th>Ingevuld door</th>
+              <td colspan="3">{{ configuration?.createdBy }}</td>
+            </tr>
+          </table>
+          @if (configuration?.customer?.dealId) {
+            <table>
+              <tr>
+                <th>Referentie</th>
+                <td colspan="3">P{{ configuration?.customer?.dealId }}</td>
+              </tr>
+            </table>
+          }
+        </div>
         @if (configuration?.preview) {
           @if (configuration?.preview?.url3D) {
             <iframe style="height: 500px; width: 100%" [src]="safe3dUrl"
@@ -20,7 +37,7 @@
         }
         @for (page of configuration?.values;track page) {
           @if (page.values.length > 0) {
-            <div class="form-section" [class.first]="$first">
+            <div class="form-section">
               <h2>{{ page.page }}</h2>
               @for (value of page.values;track value) {
 
@@ -44,9 +61,7 @@
                   @case ('ImageUpload') {
                     <div class="section">
                       <h2 class="break">{{ value.title }}</h2>
-                      <div class="image-container">
-                        <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
-                      </div>
+                      <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
                     </div>
                   }
                   @case ('FileUpload') {
