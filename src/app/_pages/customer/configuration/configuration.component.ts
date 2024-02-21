@@ -28,7 +28,6 @@ export class ConfigurationComponent implements OnInit {
   @Input() id: string = '';
   @Input() configId: string = '';
   @Input('extern') isExtern: string = '';
-  @Input('sig') signature: string = '';
   configuration: IConfiguration | null = null;
   safe3dUrl: SafeResourceUrl = '';
 
@@ -36,7 +35,6 @@ export class ConfigurationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.signature)
     this.apiService.getConfiguration(this.id, this.configId, this.isExtern === '1').subscribe(c => {
       this.configuration = c;
       if (this.configuration.customer.dealId != null) {

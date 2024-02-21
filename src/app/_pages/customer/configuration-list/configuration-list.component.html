@@ -3,6 +3,7 @@
     @defer (when customer !== null) {
       <h1>{{ customer?.name }}</h1>
       <hr class="divider accent-text">
+      @if (configurations.length >0){
       <h2>Bekijk hier uw configuraties</h2>
       @if (!loading && !error) {
         <table mat-table [dataSource]="configurations">
@@ -33,6 +34,9 @@
       }
       @if (error){
         Kon configuraties niet ophalen, probeer het opnieuw: <button mat-raised-button color="primary"><mat-icon>refresh</mat-icon></button>
+      }
+      } @else {
+        <div class="empty">Nog geen configuraties</div>
       }
     } @placeholder {
       <mat-spinner color="primary"></mat-spinner>

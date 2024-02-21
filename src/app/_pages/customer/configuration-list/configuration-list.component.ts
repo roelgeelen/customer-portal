@@ -5,7 +5,7 @@ import {
   MatColumnDef,
   MatHeaderCell,
   MatHeaderCellDef, MatHeaderRow,
-  MatHeaderRowDef, MatRow, MatRowDef,
+  MatHeaderRowDef, MatNoDataRow, MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -32,13 +32,15 @@ import {MatIconModule} from "@angular/material/icon";
     MatRowDef,
     MatProgressSpinner,
     MatButton,
-    MatIconModule
+    MatIconModule,
+    MatNoDataRow
   ],
   templateUrl: './configuration-list.component.html',
   styleUrl: './configuration-list.component.scss'
 })
 export class ConfigurationListComponent implements OnInit {
   @Input() id: string = '';
+  @Input('extern') isExtern: string = '';
   displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
@@ -76,6 +78,6 @@ export class ConfigurationListComponent implements OnInit {
   }
 
   selectRow(row: any) {
-    this.router.navigate([row.id], {relativeTo: this.route});
+    this.router.navigate([row.id], {relativeTo: this.route, queryParams: {extern: this.isExtern}});
   }
 }

@@ -5,7 +5,8 @@
   <div class="form">
     <div class="breadcrumb">
       <span>
-        <a [routerLink]="'/customers/'+id" class="primary-text">Alle configuraties</a>
+        <a [routerLink]="'/customers/'+id" [queryParams]="{extern: isExtern}"
+           class="primary-text">Alle configuraties</a>
       </span>
       /
       <span>{{ configuration?.title }}</span>
@@ -35,11 +36,11 @@
                     frameborder="0"></iframe>
           }
         }
-        @for (page of configuration?.values;track page) {
+        @for (page of configuration?.values; track page) {
           @if (page.values.length > 0) {
             <div class="form-section">
               <h2>{{ page.page }}</h2>
-              @for (value of page.values;track value) {
+              @for (value of page.values; track value) {
 
                 @switch (value.type) {
                   @case ('TextArea') {
@@ -81,9 +82,9 @@
                   }
                   @case ('Table') {
                     <table>
-                      @for (valueRow of value.value;track valueRow) {
+                      @for (valueRow of value.value; track valueRow) {
                         <tr>
-                          @for (column of value.fields;track column) {
+                          @for (column of value.fields; track column) {
                             @if ($first) {
                               <th>{{ valueRow[column.key] }}</th>
                             } @else {
@@ -101,7 +102,7 @@
                           <span>({{ value.subtitle }})</span>
                         }</th>
                         @if (value.columns) {
-                          @for (index of [0, 1, 2];track index) {
+                          @for (index of [0, 1, 2]; track index) {
                             @if (value.columns[index]) {
                               <td>
                                 @if (value.columns[index].title) {
@@ -123,6 +124,12 @@
               }
             </div>
           }
+        } @empty {
+          <div class="form-section">
+            <div class="empty">
+              Nog niks geconfigureerd
+            </div>
+          </div>
         }
       } @placeholder {
         <mat-spinner></mat-spinner>

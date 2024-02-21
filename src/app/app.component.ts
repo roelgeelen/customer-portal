@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {ThemeService} from "./_helpers/theme.service";
 
@@ -21,7 +21,6 @@ export class AppComponent {
           },
           queryParamsHandling: 'merge'
         })
-
       }
     });
     this.selectTheme(ThemeService.defaultTheme.name)
