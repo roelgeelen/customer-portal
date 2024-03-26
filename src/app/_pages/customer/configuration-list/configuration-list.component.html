@@ -16,7 +16,7 @@
           <!-- Weight Column -->
           <ng-container matColumnDef="updatedAt">
             <th mat-header-cell *matHeaderCellDef> Laatst aangepast</th>
-            <td mat-cell *matCellDef="let element"> {{ element.updatedAt }}</td>
+            <td mat-cell *matCellDef="let element"> {{ element.updatedAt | date}}</td>
           </ng-container>
 
           <!-- Symbol Column -->

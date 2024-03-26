@@ -15,6 +15,7 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {IConfiguration} from "../../../_models/configuration.interface";
 import {MatButton} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-configuration-list',
@@ -33,7 +34,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatProgressSpinner,
     MatButton,
     MatIconModule,
-    MatNoDataRow
+    MatNoDataRow,
+    DatePipe
   ],
   templateUrl: './configuration-list.component.html',
   styleUrl: './configuration-list.component.scss'

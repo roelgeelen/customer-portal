@@ -23,7 +23,12 @@ export class AppComponent {
         })
       }
     });
-    this.selectTheme(ThemeService.defaultTheme.name)
+    console.log(window.location.hostname)
+    if (window.location.hostname === 'configurations.ambassa.nl') {
+      this.selectTheme('ambassa-theme')
+    } else {
+      this.selectTheme(ThemeService.defaultTheme.name)
+    }
   }
 
   selectTheme(themeName: string) {
