@@ -1,13 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormPageComponent} from "./form-page/form-page.component";
 import {ApiService} from "../../../_services/api.service";
-import {ActivatedRoute, RouterLink} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {IConfiguration} from "../../../_models/configuration.interface";
 import {DomSanitizer, SafeResourceUrl, Title} from "@angular/platform-browser";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {SafeHtmlPipe} from "../../../_helpers/pipes/safe-html.pipe";
 import {MatButton, MatFabButton} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {IsArrayPipe} from "../../../_helpers/pipes/is-array.pipe";
 
 @Component({
   selector: 'app-configuration',
@@ -19,7 +20,8 @@ import {MatIconModule} from "@angular/material/icon";
     RouterLink,
     MatButton,
     MatFabButton,
-    MatIconModule
+    MatIconModule,
+    IsArrayPipe
   ],
   templateUrl: './configuration.component.html',
   styleUrls: ['./configuration.component.scss', './print.scss']
