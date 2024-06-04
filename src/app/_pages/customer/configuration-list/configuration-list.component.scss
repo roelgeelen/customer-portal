@@ -1,17 +1,22 @@
 .dnd-section {
   padding: 0 20px;
+
   .min-height {
     min-height: calc(100vh - 439px);
-    .divider{
+
+    .divider {
       border-top: 5px solid;
     }
+
     .mat-mdc-row:hover .mat-mdc-cell {
       background-color: #eaeaea;
       cursor: pointer;
     }
+
     .mat-mdc-header-row {
       font-size: 16px;
     }
+
     .empty {
       text-align: center;
       font-size: 16px;
@@ -20,3 +25,49 @@
     }
   }
 }
+
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mobile-label {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .row-title {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 8px !important;
+  }
+  .mobile-label {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .mat-mdc-header-row {
+    display: none;
+  }
+
+  .mat-mdc-row {
+    flex-direction: column;
+    align-items: start;
+    margin: 16px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px #22233a33;
+    padding: 8px;
+    &:hover {
+      background-color: #eaeaea;
+    }
+  }
+  .mat-mdc-cell {
+    border: none;
+    justify-content: space-between;
+    padding: 4px 16px;
+    min-height: 25px;
+  }
+}
+

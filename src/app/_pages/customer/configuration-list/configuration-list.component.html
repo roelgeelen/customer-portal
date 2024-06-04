@@ -6,28 +6,28 @@
       @if (configurations.length >0){
       <h2>Bekijk hier uw configuraties</h2>
       @if (!loading && !error) {
-        <table mat-table [dataSource]="configurations">
+        <mat-table mat-table [dataSource]="configurations" >
           <!-- Name Column -->
           <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef> Configuratie</th>
-            <td mat-cell *matCellDef="let element"> {{ element.title }}</td>
+            <mat-header-cell *matHeaderCellDef> Configuratie</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
           </ng-container>
 
           <!-- Weight Column -->
           <ng-container matColumnDef="updatedAt">
-            <th mat-header-cell *matHeaderCellDef> Laatst aangepast</th>
-            <td mat-cell *matCellDef="let element"> {{ element.updatedAt | date: 'dd-MM-yyyy'}}</td>
+            <mat-header-cell *matHeaderCellDef> Laatst aangepast</mat-header-cell>
+            <mat-cell  *matCellDef="let element"><span class="mobile-label">laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy'}}</mat-cell>
           </ng-container>
 
           <!-- Symbol Column -->
           <ng-container matColumnDef="updatedBy">
-            <th mat-header-cell *matHeaderCellDef> Aangepast door</th>
-            <td mat-cell *matCellDef="let element"> {{ element.updatedBy }}</td>
+            <mat-header-cell *matHeaderCellDef> Aangepast door</mat-header-cell>
+            <mat-cell *matCellDef="let element"><span class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}</mat-cell>
           </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
       }
       @if (loading){
         <mat-spinner color="primary"></mat-spinner>

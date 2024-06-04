@@ -21,7 +21,7 @@ mat-toolbar {
 
 main {
   .container-fluid{
-    width: 100%;
+    //width: 100%;
     padding: 48px 15px;
   }
 }
@@ -33,7 +33,6 @@ main {
   overflow: hidden;
   display: block;
   .container {
-    width: 100%;
     padding: 0 15px;
     .copyright-text {
       color: #ccc;
@@ -41,6 +40,13 @@ main {
         color: white;
         text-decoration: none;
       }
+    }
+  }
+}
+@media (max-width: 768px) {
+  mat-toolbar {
+    .logo {
+      height: 50px;
     }
   }
 }
