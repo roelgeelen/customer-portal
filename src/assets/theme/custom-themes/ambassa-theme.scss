@@ -45,7 +45,7 @@ $palette: (
 );
 
 $primary: mat.define-palette($palette);
-$accent: mat.define-palette(mat.$brown-palette);
+$accent: mat.define-palette($palette);
 $warn: mat.define-palette(warn.$md-warn);
 
 // color config function

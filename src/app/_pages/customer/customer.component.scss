@@ -1,3 +1,12 @@
+header {
+  &.ambassa-theme {
+    background-color: #333;
+    mat-toolbar {
+      background-color: #333;
+    }
+  }
+}
+
 mat-toolbar {
   height: auto;
   background-color: white;
@@ -7,6 +16,9 @@ mat-toolbar {
   }
 }
 .banner {
+  &.ambassa-theme {
+    display: none;
+  }
   .container-fluid {
     max-width: none;
   }
@@ -25,13 +37,31 @@ main {
     padding: 48px 15px;
   }
 }
-
+.footer-banner{
+  display: none;
+  &.ambassa-theme {
+    display: block;
+    &::before {
+      background-color: #f49651 !important;
+      bottom: 25px;
+      content: "";
+      height: 200px;
+      right: -100px;
+      position: absolute;
+      transform: skewX(333deg);
+      width: 70%;
+    }
+  }
+}
 .site-footer {
   background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
   padding: 72px 0;
   position: relative;
   overflow: hidden;
   display: block;
+  &.ambassa-theme {
+    background: #333 !important;
+  }
   .container {
     padding: 0 15px;
     .copyright-text {
