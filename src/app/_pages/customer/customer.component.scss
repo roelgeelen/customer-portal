@@ -1,6 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 header {
   &.ambassa-theme {
     background-color: #333;
+
     mat-toolbar {
       background-color: #333;
     }
@@ -10,19 +17,23 @@ header {
 mat-toolbar {
   height: auto;
   background-color: white;
+
   .logo {
     height: 80px;
     padding: 10px;
   }
 }
+
 .banner {
   &.ambassa-theme {
     display: none;
   }
+
   .container-fluid {
     max-width: none;
   }
 }
+
 .banner-image {
   background-image: url(https://info.differentdoors.nl/hubfs/page-header-1.jpg);
   background-size: cover;
@@ -32,47 +43,77 @@ mat-toolbar {
 }
 
 main {
-  .container-fluid{
+  flex: 1;
+
+  .container-fluid {
     //width: 100%;
     padding: 48px 15px;
   }
 }
-.footer-banner{
-  display: none;
+
+//.footer-banner{
+//  display: none;
+//  &.ambassa-theme {
+//    display: block;
+//    position: relative;
+//    overflow: hidden;
+//    &::before {
+//      background-color: #f49651 !important;
+//      bottom: 0;
+//      content: "";
+//      height: 200px;
+//      right: -100px;
+//      position: absolute;
+//      transform: skewX(333deg);
+//      width: 70%;
+//    }
+//  }
+//}
+.site-footer {
+  position: relative;
+  overflow: hidden;
+
   &.ambassa-theme {
-    display: block;
+    .footer-wrapper {
+      margin-top: 30px;
+      background: #333 !important;
+    }
+
     &::before {
       background-color: #f49651 !important;
-      bottom: 25px;
+      bottom: 0;
       content: "";
       height: 200px;
-      right: -100px;
+      right: 0;
       position: absolute;
       transform: skewX(333deg);
       width: 70%;
     }
   }
-}
-.site-footer {
-  background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
-  padding: 72px 0;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  &.ambassa-theme {
-    background: #333 !important;
-  }
-  .container {
-    padding: 0 15px;
-    .copyright-text {
-      color: #ccc;
-      a {
-        color: white;
-        text-decoration: none;
+
+  .footer-wrapper {
+    background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
+    padding: 72px 0;
+    position: relative;
+    //overflow-x: hidden;
+    display: block;
+
+
+    .container {
+      padding: 0 15px;
+
+      .copyright-text {
+        color: #ccc;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
   }
 }
+
 @media (max-width: 768px) {
   mat-toolbar {
     .logo {

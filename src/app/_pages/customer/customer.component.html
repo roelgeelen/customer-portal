@@ -1,34 +1,38 @@
 @if (themeService.theme$|async; as theme) {
-  <header [class]="theme.name">
-    <div class="container-fluid">
-      <mat-toolbar>
-        <img [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo">
-      </mat-toolbar>
-    </div>
-  </header>
-  <div class="banner" [class]="theme.name">
-    <div class="container-fluid">
-      <div class="banner-image"></div>
-    </div>
-  </div>
-  <main>
-    <div class="container-fluid">
-      <router-outlet></router-outlet>
-    </div>
-  </main>
-  <div class="footer-banner" [class]="theme.name">
-
-  </div>
-  <footer class="site-footer" [class]="theme.name">
-    <div class="container container-fluid">
-      <div class="site-info">
-        <div class="copyright-text">
-          © 2024 {{ theme.displayName }} - Alle rechten voorbehouden
-<!--          <a href="https://www.differentdoors.nl/privacy-policy/">Privacy policy</a> |-->
-<!--          <a href="https://garagedeuren.s3.amazonaws.com/20200916110943/Algemene-voorwaarden-Different-Doors-B.V..pdf"-->
-<!--             target="_blank" rel="noopener">Algemene voorwaarden</a>-->
-        </div>
+  <div class="wrapper">
+    <header [class]="theme.name">
+      <div class="container-fluid">
+        <mat-toolbar>
+          <img [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo">
+        </mat-toolbar>
+      </div>
+    </header>
+    <div class="banner" [class]="theme.name">
+      <div class="container-fluid">
+        <div class="banner-image"></div>
       </div>
     </div>
-  </footer>
+    <main>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+<!--    <div class="footer-banner" [class]="theme.name">-->
+
+<!--    </div>-->
+    <footer class="site-footer" [class]="theme.name">
+      <div class="footer-wrapper">
+        <div class="container container-fluid">
+          <div class="site-info">
+            <div class="copyright-text">
+              © 2024 {{ theme.displayName }} - Alle rechten voorbehouden
+              <!--          <a href="https://www.differentdoors.nl/privacy-policy/">Privacy policy</a> |-->
+              <!--          <a href="https://garagedeuren.s3.amazonaws.com/20200916110943/Algemene-voorwaarden-Different-Doors-B.V..pdf"-->
+              <!--             target="_blank" rel="noopener">Algemene voorwaarden</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 }
