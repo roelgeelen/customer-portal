@@ -55,4 +55,6 @@ export class ConfigurationComponent implements OnInit {
   print() {
     window.print()
   }
+
+    protected readonly Array = Array;
 }
