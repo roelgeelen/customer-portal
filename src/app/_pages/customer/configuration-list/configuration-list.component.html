@@ -1,40 +1,62 @@
 <div class="dnd-section">
   <div class="min-height">
     @defer (when customer !== null) {
+      @if (statuses.length > 0) {
+        @if (statusError) {
+          <div class="status-error">
+            <mat-icon>info_outlined</mat-icon>
+            Kon de huidige status niet ophalen
+          </div>
+        }
+        <mat-stepper [linear]="false" #stepper [selectedIndex]="index" [labelPosition]="labelPosition">
+          @for (status of statuses; track status) {
+            <mat-step [editable]="false">
+              <ng-template matStepLabel>{{ status }}</ng-template>
+            </mat-step>
+          }
+        </mat-stepper>
+      }
       <h1>{{ customer?.name }}</h1>
       <hr class="divider accent-text">
-      @if (configurations.length >0){
-      <h2>Bekijk hier uw configuraties</h2>
-      @if (!loading && !error) {
-        <mat-table mat-table [dataSource]="configurations" >
-          <!-- Name Column -->
-          <ng-container matColumnDef="title">
-            <mat-header-cell *matHeaderCellDef> Configuratie</mat-header-cell>
-            <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
-          </ng-container>
+      @if (configurations.length > 0) {
+        <h2>Bekijk hier uw configuraties</h2>
+        @if (!loading && !error) {
+          <mat-table mat-table [dataSource]="configurations">
+            <!-- Name Column -->
+            <ng-container matColumnDef="title">
+              <mat-header-cell *matHeaderCellDef> Configuratie</mat-header-cell>
+              <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
+            </ng-container>
 
-          <!-- Weight Column -->
-          <ng-container matColumnDef="updatedAt">
-            <mat-header-cell *matHeaderCellDef> Laatst aangepast</mat-header-cell>
-            <mat-cell  *matCellDef="let element"><span class="mobile-label">laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy'}}</mat-cell>
-          </ng-container>
+            <!-- Weight Column -->
+            <ng-container matColumnDef="updatedAt">
+              <mat-header-cell *matHeaderCellDef> Laatst aangepast</mat-header-cell>
+              <mat-cell *matCellDef="let element"><span
+                class="mobile-label">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
+              </mat-cell>
+            </ng-container>
 
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="updatedBy">
-            <mat-header-cell *matHeaderCellDef> Aangepast door</mat-header-cell>
-            <mat-cell *matCellDef="let element"><span class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}</mat-cell>
-          </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="updatedBy">
+              <mat-header-cell *matHeaderCellDef> Aangepast door</mat-header-cell>
+              <mat-cell *matCellDef="let element"><span
+                class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}
+              </mat-cell>
+            </ng-container>
 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-      }
-      @if (loading){
-        <mat-spinner color="primary"></mat-spinner>
-      }
-      @if (error){
-        Kon configuraties niet ophalen, probeer het opnieuw: <button mat-raised-button color="primary"><mat-icon>refresh</mat-icon></button>
-      }
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        }
+        @if (loading) {
+          <mat-spinner color="primary"></mat-spinner>
+        }
+        @if (error) {
+          Kon configuraties niet ophalen, probeer het opnieuw:
+          <button mat-raised-button color="primary">
+            <mat-icon>refresh</mat-icon>
+          </button>
+        }
       } @else {
         <div class="empty">Nog geen configuraties</div>
       }

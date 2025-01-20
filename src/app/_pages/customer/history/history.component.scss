@@ -1,0 +1,11 @@
+.dnd-section {
+  padding: 0 20px;
+
+  .min-height {
+    min-height: calc(100vh - 439px);
+
+    .divider {
+      border-top: 5px solid;
+    }
+  }
+}

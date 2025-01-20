@@ -2,8 +2,18 @@
   <div class="wrapper">
     <header [class]="theme.name">
       <div class="container-fluid">
-        <mat-toolbar>
+        <mat-toolbar [class.dark]="theme.name=='ambassa-theme'">
           <img [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo">
+          <span class="spacer"></span>
+          <a mat-button routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
+            Mijn deuren
+          </a>
+<!--          <a mat-button routerLink="/customers/{{id}}/history" routerLinkActive="selected">-->
+<!--            Onderhoud-->
+<!--          </a>-->
+<!--          <a mat-button href="https://kennis.{{theme.name=='ambassa-theme'?'ambassa':'differentdoors'}}.nl/nl" target="_blank">-->
+<!--            Handleiding-->
+<!--          </a>-->
         </mat-toolbar>
       </div>
     </header>
