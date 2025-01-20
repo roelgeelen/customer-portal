@@ -4,7 +4,6 @@ import {ICustomer} from "../_models/customer.interface";
 import {IConfiguration} from "../_models/configuration.interface";
 import {environment} from "../../environments/environment";
 import {IStatus} from "../_models/status.interface";
-import {HList, IQuestion} from "../_models/FAQ/question.interface";
 
 @Injectable({
   providedIn: 'root'
