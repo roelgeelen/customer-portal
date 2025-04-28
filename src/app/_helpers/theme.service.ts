@@ -22,8 +22,8 @@ export class ThemeService {
   static defaultTheme: ITheme = {
     displayName: 'Different Doors',
     name: 'different-doors-theme',
-    imageDark: 'assets/images/logos/different-doors-black.png',
-    imageLight: 'assets/images/logos/different-doors-white.png',
+    imageDark: 'assets/images/logos/logo-different-doors.svg',
+    imageLight: 'assets/images/logos/logo-different-doors-wit.svg',
   };
   themes: ITheme[] = [
     ThemeService.defaultTheme,

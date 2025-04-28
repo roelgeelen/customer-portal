@@ -10,6 +10,11 @@ header {
 
     mat-toolbar {
       background-color: #333;
+      .logo {
+        height: 80px;
+        width: auto;
+        padding: 10px 5px;
+      }
     }
   }
 }
@@ -23,8 +28,8 @@ mat-toolbar {
   }
 
   .logo {
-    height: 80px;
-    padding: 10px 5px;
+    width: 325px;
+    padding: 30px 5px;
   }
 
   a {
@@ -57,11 +62,27 @@ mat-toolbar {
 }
 
 .banner-image {
-  background-image: url(https://info.differentdoors.nl/hubfs/page-header-1.jpg);
+  background-image: url(https://25493451.fs1.hubspotusercontent-eu1.net/hubfs/25493451/banner-1.png);
   background-size: cover;
   min-height: 55px;
   background-repeat: no-repeat;
   background-position: left top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  .text-end {
+    text-align: right !important;
+  }
+  .col-6 {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
 }
 
 main {
@@ -114,11 +135,12 @@ main {
   }
 
   .footer-wrapper {
-    background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
+    //background: url(//f.hubspotusercontent-eu1.net/hubfs/25493451/raw_assets/public/DifferentDoors_February2022/images/footer-bg.jpg) left top no-repeat #222 !important;
     padding: 72px 0;
     position: relative;
     //overflow-x: hidden;
     display: block;
+    background-color: black;
 
 
     .container {
