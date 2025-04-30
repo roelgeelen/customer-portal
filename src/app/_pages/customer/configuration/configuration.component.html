@@ -62,22 +62,27 @@
                     @case ('ImageUpload') {
                       <div class="section">
                         <h2 class="break">{{ value.title }}</h2>
+                        @for (file of normalizedFiles(value.value); track file) {
+                          <img [src]="file.url+'?name='+file.name" alt="afbeelding">
+                        }
                         <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
                       </div>
                     }
                     @case ('FileUpload') {
                       <h2 class="break">{{ value.title }}</h2>
                       <div class="files-list">
-                        <a class="single-file" [href]="value.value.url" target="_blank">
-                          <div class="file-icon" style="width: 40px; height: 36px">
-                            <img src="assets/images/file-icon.svg" alt="icon">
-                          </div>
-                          <div class="info">
-                            <div class="name">
-                              {{ value.value.name }}
+                        @for (file of normalizedFiles(value.value); track file) {
+                          <a class="single-file" [href]="file.url" target="_blank">
+                            <div class="file-icon" style="width: 40px; height: 36px">
+                              <img src="assets/images/file-icon.svg" alt="icon">
                             </div>
-                          </div>
-                        </a>
+                            <div class="info">
+                              <div class="name">
+                                {{ file.name }}
+                              </div>
+                            </div>
+                          </a>
+                        }
                       </div>
                     }
                     @case ('Table') {

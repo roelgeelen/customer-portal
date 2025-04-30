@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormPageComponent} from "./form-page/form-page.component";
 import {ApiService} from "../../../_services/api.service";
 import {RouterLink} from "@angular/router";
-import {IConfiguration} from "../../../_models/configuration.interface";
+import {IConfiguration, IConfigurationAttachment} from "../../../_models/configuration.interface";
 import {DomSanitizer, SafeResourceUrl, Title} from "@angular/platform-browser";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {SafeHtmlPipe} from "../../../_helpers/pipes/safe-html.pipe";
@@ -54,6 +54,11 @@ export class ConfigurationComponent implements OnInit {
 
   print() {
     window.print()
+  }
+
+  normalizedFiles(val: any): IConfigurationAttachment[] {
+    if (!val) return [];
+    return Array.isArray(val) ? val : [val];
   }
 
     protected readonly Array = Array;
