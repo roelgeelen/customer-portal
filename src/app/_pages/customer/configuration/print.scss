@@ -1,8 +1,8 @@
-@page
-{
+@page {
   size: A4;
   margin: 15mm 4mm 12mm 0;
 }
+
 @media print {
   .btn-print {
     visibility: hidden !important;
@@ -20,6 +20,7 @@
 
     .form-header {
       flex-direction: row;
+
       .logo {
         img {
           width: 150px;
@@ -46,14 +47,29 @@
     }
   }
   .form-section {
-    page-break-inside: avoid !important;
+    //page-break-inside: avoid !important;
+    .table-responsive {
+      th {
+        width: 150px !important;
+        text-align: start;
+        vertical-align: baseline;
+        padding: 0!important;
+        display: table-cell;
+      }
+
+      tr, td {
+        padding: 0 !important;
+        display: table-cell;
+        width: 150px;
+      }
+    }
   }
   .section {
     page-break-inside: avoid !important;
     //max-height: 900px;
-    //img {
-    //  width: auto;
-    //
-    //}
+    img {
+      page-break-inside: avoid;max-height: 450px !important;max-width: 100%;width: auto;
+
+    }
   }
 }
