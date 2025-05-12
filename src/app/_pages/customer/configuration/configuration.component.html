@@ -65,7 +65,6 @@
                         @for (file of normalizedFiles(value.value); track file) {
                           <img [src]="file.url+'?name='+file.name" alt="afbeelding">
                         }
-                        <img [src]="value.value.url+'?name='+value.value.name" alt="afbeelding">
                       </div>
                     }
                     @case ('FileUpload') {

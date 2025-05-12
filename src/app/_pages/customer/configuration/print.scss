@@ -47,7 +47,7 @@
     }
   }
   .form-section {
-    //page-break-inside: avoid !important;
+    //break-inside: avoid-page !important;
     .table-responsive {
       th {
         width: 150px !important;
@@ -65,11 +65,12 @@
     }
   }
   .section {
-    page-break-inside: avoid !important;
+    break-inside: avoid !important;
     //max-height: 900px;
     img {
-      page-break-inside: avoid;max-height: 450px !important;max-width: 100%;width: auto;
-
+      break-inside: avoid;
+      max-height: 450px !important;
+      max-width: 100%;width: auto;
     }
   }
 }
