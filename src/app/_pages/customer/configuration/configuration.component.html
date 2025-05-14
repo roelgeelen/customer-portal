@@ -88,12 +88,15 @@
                       <table class="table-responsive">
                         @for (valueRow of value.value; track valueRow) {
                           <tr>
+                            @if ($first) {
+                              <th>{{ value.title }}<br>@if (value.subtitle) {
+                                <span>({{ value.subtitle }})</span>
+                              }</th>
+                            } @else {
+                              <th></th>
+                            }
                             @for (column of value.fields; track column) {
-                              @if ($first) {
-                                <th>{{ valueRow[column.key] }}</th>
-                              } @else {
-                                <td><b>{{ column.key }}</b>: {{ valueRow[column.key] }}</td>
-                              }
+                              <td>{{ column.key }}: {{ valueRow[column.key] }}</td>
                             }
                           </tr>
                         }
