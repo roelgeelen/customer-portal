@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Ondertekenen</h1>
+<div mat-dialog-content #dialog>
+  <form (ngSubmit)="sign(signName.value)">
+    <mat-form-field class="field">
+      <mat-label>Naam</mat-label>
+      <input #signName="ngModel" ngModel matInput type="text"
+             [ngModelOptions]="{standalone: true}" required>
+      @if (signName.invalid) {
+        <mat-error>Naam is verplicht</mat-error>
+      }
+    </mat-form-field>
+    <div class="label">Handtekeing</div>
+    <signature-pad #signature [options]="signaturePadOptions"></signature-pad>
+    <br>
+    <button mat-raised-button color="primary" type="submit">
+      @if (!loading) {
+        save
+      } @else {
+        <mat-spinner class="white" [diameter]="20">save</mat-spinner>
+      }
+    </button>
+
+    <button mat-button (click)="clear()" type="button">Clear</button>
+  </form>
+</div>

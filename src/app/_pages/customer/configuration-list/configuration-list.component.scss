@@ -48,8 +48,19 @@
   max-height: 500px;
 }
 
+.mat-column-icons{
+  max-width: 65px;
+}
+
 .mobile-label {
   display: none;
+}
+.warning {
+  color: orange;
+}
+
+.success {
+  color: forestgreen;
 }
 
 @media (max-width: 768px) {

@@ -6,7 +6,11 @@ export interface IConfiguration {
   // form: IForm;
   title: string;
   preview?: {
-    url3D?: string;
+    approval?: {
+      name?: string;
+      date?: string;
+      value?: string;
+    };
   };
   values?: IConfigurationItem[];
   createdBy?: string;

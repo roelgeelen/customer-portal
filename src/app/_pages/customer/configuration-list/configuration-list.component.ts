@@ -56,7 +56,7 @@ export class ConfigurationListComponent implements OnInit {
   @Input('extern') isExtern: string = '';
   @ViewChild('stepper') stepper?: MatStepper;
   labelPosition: 'end' | 'bottom' = this.updateLabelPosition();
-  displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy'];
+  displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
   loading = false;
@@ -128,7 +128,7 @@ export class ConfigurationListComponent implements OnInit {
   setStatus(status: string) {
     this.stepper?.reset();
     for (let i = 0; i < this.statuses.findIndex(s => s === status); i++) {
-      this.stepper!.next();  // Roep 'next()' op om naar de volgende stap te gaan
+      this.stepper!.next();
     }
   }
 

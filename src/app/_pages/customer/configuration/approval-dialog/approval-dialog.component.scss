@@ -1,0 +1,13 @@
+.field {
+  width: 100%;
+}
+
+::ng-deep {
+  mat-spinner {
+    &.white {
+      circle {
+        stroke: white !important;
+      }
+    }
+  }
+}

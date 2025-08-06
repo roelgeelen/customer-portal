@@ -2,6 +2,20 @@
   <button mat-fab color="primary" class="btn-print" (click)="print()">
     <mat-icon>print</mat-icon>
   </button>
+  @if (configuration?.preview?.approval != undefined) {
+    @if (configuration?.preview?.approval?.name != undefined) {
+      <div class="customer-approval"
+           [matTooltip]="(configuration?.preview?.approval?.date|date:'yyyy-MM-dd') + ' - '+ (configuration?.preview?.approval?.name ?? '')">
+        <mat-icon>check</mat-icon>
+        Goedgekeurd
+      </div>
+    } @else {
+      <button mat-raised-button class="btn-sign" color="success" (click)="openDialog(configuration)">
+        <mat-icon>draw</mat-icon>
+        Ondertekenen
+      </button>
+    }
+  }
   <div class="form">
     <div class="breadcrumb">
       <span>
@@ -30,12 +44,6 @@
             </table>
           }
         </div>
-        @if (configuration?.preview) {
-          @if (configuration?.preview?.url3D) {
-            <iframe style="height: 500px; width: 100%" [src]="safe3dUrl"
-                    frameborder="0"></iframe>
-          }
-        }
         @for (page of configuration?.values; track page) {
           @if (page.values.length > 0) {
             <div class="form-section">
@@ -137,6 +145,12 @@
             <div class="empty">
               Nog niks geconfigureerd
             </div>
+          </div>
+        }
+        @if (configuration?.preview?.approval?.value) {
+          <div class="section">
+            <h2 class="break">Goedkeuring</h2>
+            <img [src]="configuration?.preview?.approval?.value" alt="afbeelding">
           </div>
         }
       } @placeholder {

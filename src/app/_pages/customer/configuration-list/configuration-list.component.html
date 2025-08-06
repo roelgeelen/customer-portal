@@ -24,13 +24,13 @@
           <mat-table mat-table [dataSource]="configurations">
             <!-- Name Column -->
             <ng-container matColumnDef="title">
-              <mat-header-cell *matHeaderCellDef> Configuratie</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef>Configuratie</mat-header-cell>
               <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
             </ng-container>
 
             <!-- Weight Column -->
             <ng-container matColumnDef="updatedAt">
-              <mat-header-cell *matHeaderCellDef> Laatst aangepast</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef>Laatst aangepast</mat-header-cell>
               <mat-cell *matCellDef="let element"><span
                 class="mobile-label">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
               </mat-cell>
@@ -38,9 +38,22 @@
 
             <!-- Symbol Column -->
             <ng-container matColumnDef="updatedBy">
-              <mat-header-cell *matHeaderCellDef> Aangepast door</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef>Aangepast door</mat-header-cell>
               <mat-cell *matCellDef="let element"><span
                 class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="icons" stickyEnd>
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                @if (element.preview?.approval != undefined) {
+                  @if (element?.preview?.approval?.name) {
+                    <mat-icon class="success">check_circle_outlined</mat-icon>
+                  } @else {
+                    <mat-icon class="warning">warning</mat-icon>
+                  }
+                }
               </mat-cell>
             </ng-container>
 

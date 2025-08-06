@@ -32,4 +32,14 @@ export class ApiService {
   getConfiguration(id: string, configId: string, isExtern: boolean) {
     return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}?extern=${isExtern}`);
   }
+
+  saveSignature(id: string|undefined, configId: string, file: string, name: string) {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('name', name);
+    return this.http.post<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}/sign`, formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
 }
