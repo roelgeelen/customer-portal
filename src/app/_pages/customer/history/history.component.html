@@ -3,9 +3,63 @@
     @defer (when customer !== null) {
       <h1>{{ customer?.name }}</h1>
       <hr class="divider accent-text">
-<!--      @if (configurations.length > 0) {-->
+      @if (configurations.length > 0) {
         <h2>Historie</h2>
-<!--      }-->
+        @if (!loading && !error) {
+          <mat-table mat-table [dataSource]="configurations">
+            <!-- Name Column -->
+            <ng-container matColumnDef="title">
+              <mat-header-cell *matHeaderCellDef>Configuratie</mat-header-cell>
+              <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="updatedAt">
+              <mat-header-cell *matHeaderCellDef>Laatst aangepast</mat-header-cell>
+              <mat-cell *matCellDef="let element"><span
+                class="mobile-label">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
+              </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="updatedBy">
+              <mat-header-cell *matHeaderCellDef>Aangepast door</mat-header-cell>
+              <mat-cell *matCellDef="let element"><span
+                class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="icons" stickyEnd>
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                @if (element.preview?.approval != undefined) {
+                  @if (element?.preview?.approval?.name) {
+                    <mat-icon class="success">check_circle_outlined</mat-icon>
+                  } @else {
+                    <mat-icon class="warning">warning</mat-icon>
+                  }
+                }
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        }
+        @if (loading) {
+          <mat-spinner color="primary"></mat-spinner>
+        }
+        @if (error) {
+          Kon configuraties niet ophalen, probeer het opnieuw:
+          <button mat-raised-button color="primary">
+            <mat-icon>refresh</mat-icon>
+          </button>
+        }
+      } @else {
+        <div class="empty">Nog geen configuraties</div>
+      }
+    } @placeholder {
+      <mat-spinner color="primary"></mat-spinner>
     }
   </div>
 </div>

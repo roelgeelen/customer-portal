@@ -35,4 +35,9 @@ export const routes: Routes = [
     component: ConfigurationComponent,
     title: 'Configuration'
   },
+  {
+    path: 'customers/:id/history/:configId',
+    component: ConfigurationComponent,
+    title: 'Configuration'
+  },
 ];

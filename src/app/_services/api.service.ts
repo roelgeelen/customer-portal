@@ -25,8 +25,8 @@ export class ApiService {
     return this.http.get<any>(`${environment.apiUrl}/public/customer/${id}/deal`);
   }
 
-  getConfigurations(id: string) {
-    return this.http.get<IConfiguration[]>(`${environment.apiUrl}/public/customer/${id}/configurations`);
+  getConfigurations(id: string, type: string) {
+    return this.http.get<IConfiguration[]>(`${environment.apiUrl}/public/customer/${id}/configurations?type=${type}`);
   }
 
   getConfiguration(id: string, configId: string, isExtern: boolean) {

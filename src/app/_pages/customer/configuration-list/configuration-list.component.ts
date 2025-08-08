@@ -109,7 +109,7 @@ export class ConfigurationListComponent implements OnInit {
   getConfigurations() {
     this.loading = true;
     this.error = false;
-    this.apiService.getConfigurations(this.id).subscribe({
+    this.apiService.getConfigurations(this.id, 'configuration').subscribe({
       next: (c) => {
         this.configurations = c;
       },
