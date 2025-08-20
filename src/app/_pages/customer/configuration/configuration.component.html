@@ -75,6 +75,12 @@
                         }
                       </div>
                     }
+                    @case ('ImageCarousel') {
+                      <div class="section">
+                        <h2 class="break">{{ value.title }}</h2>
+                        <app-image-slider [images]="convertToSlider(value.value)"></app-image-slider>
+                      </div>
+                    }
                     @case ('FileUpload') {
                       <h2 class="break">{{ value.title }}</h2>
                       <div class="files-list">

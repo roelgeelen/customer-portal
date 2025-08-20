@@ -12,7 +12,9 @@ import {IsArrayPipe} from "../../../_helpers/pipes/is-array.pipe";
 import {MatTooltip} from "@angular/material/tooltip";
 import {ApprovalDialogComponent} from "./approval-dialog/approval-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ImageSliderComponent} from "../../../_helpers/_components/image-slider/image-slider.component";
 import {DatePipe} from "@angular/common";
+import {NgImageSliderModule} from "ng-image-slider";
 
 @Component({
   selector: 'app-configuration',
@@ -27,7 +29,9 @@ import {DatePipe} from "@angular/common";
     MatIconModule,
     IsArrayPipe,
     MatTooltip,
-    DatePipe
+    ImageSliderComponent,
+    DatePipe,
+    NgImageSliderModule
   ],
   templateUrl: './configuration.component.html',
   styleUrls: ['./configuration.component.scss', './print.scss']
@@ -70,6 +74,17 @@ export class ConfigurationComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getConfiguration();
+    })
+  }
+
+
+  convertToSlider(val: any): Array<object> {
+    var values = this.normalizedFiles(val);
+    return values.map(file => {
+      return {
+        image: file.url+'?name='+file.name,
+        thumbImage: file.url+'?name='+file.name
+      };
     })
   }
 
