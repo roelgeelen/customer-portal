@@ -3,7 +3,7 @@ import {provideRouter, withComponentInputBinding} from '@angular/router';
 
 import {routes} from './app.routes';
 import {provideAnimations} from '@angular/platform-browser/animations';
-import {provideHttpClient, withInterceptors} from "@angular/common/http";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import {SignatureParamInterceptor} from "./_helpers/interceptors/http.interceptor";
 
 export const appConfig: ApplicationConfig = {

@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpHandler, HttpInterceptor, HttpInterceptorFn, HttpRequest} from "@angular/common/http";
+import { HttpHandler, HttpInterceptor, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
 
 
 export const SignatureParamInterceptor:HttpInterceptorFn = (req, next) => {

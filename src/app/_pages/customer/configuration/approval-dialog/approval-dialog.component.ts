@@ -12,7 +12,7 @@ import {
 import {MatButtonModule} from "@angular/material/button";
 import {ApiService} from "../../../../_services/api.service";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
-import {HttpResponse} from "@angular/common/http";
+import { HttpResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-approval-dialog',
