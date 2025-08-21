@@ -5,15 +5,35 @@
         <mat-toolbar [class.dark]="theme.name=='ambassa-theme'">
           <img [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo">
           <span class="spacer"></span>
-          <a mat-button routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
-            Mijn deuren
-          </a>
-          <a mat-button routerLink="/customers/{{id}}/history" routerLinkActive="selected">
-            Onderhoud
-          </a>
-          <a mat-button href="https://knowledge.{{theme.name=='ambassa-theme'?'ambassa':'differentdoors'}}.nl/nl" target="_blank">
-            Handleiding
-          </a>
+          <div class="menu">
+            <a mat-button routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
+              Mijn deuren
+            </a>
+            <a mat-button routerLink="/customers/{{id}}/history" routerLinkActive="selected">
+              Onderhoud
+            </a>
+            <a mat-button href="https://knowledge.{{theme.name=='ambassa-theme'?'ambassa':'differentdoors'}}.nl/nl"
+               target="_blank">
+              Handleiding
+            </a>
+          </div>
+          <div class="menu-mobile">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <a mat-menu-item routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
+                Mijn deuren
+              </a>
+              <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected">
+                Onderhoud
+              </a>
+              <a mat-menu-item href="https://knowledge.{{theme.name=='ambassa-theme'?'ambassa':'differentdoors'}}.nl/nl"
+                 target="_blank">
+                Handleiding
+              </a>
+            </mat-menu>
+          </div>
         </mat-toolbar>
       </div>
     </header>
@@ -22,10 +42,12 @@
         <div class="banner-image">
           <div class="row">
             <div class="col-6 text-end">
-              <img src="https://www.differentdoors.nl/wp-content/themes/doors/dist/images/expect-the.png.webp" width="139" height="25" alt="expect the">
+              <img src="https://www.differentdoors.nl/wp-content/themes/doors/dist/images/expect-the.png.webp"
+                   width="139" height="25" alt="expect the">
             </div>
             <div class="col-6">
-              <img src="https://www.differentdoors.nl/wp-content/themes/doors/dist/images/unexpected.png.webp" width="151" height="25" alt="unexpected">
+              <img src="https://www.differentdoors.nl/wp-content/themes/doors/dist/images/unexpected.png.webp"
+                   width="151" height="25" alt="unexpected">
             </div>
           </div>
         </div>
@@ -36,9 +58,9 @@
         <router-outlet></router-outlet>
       </div>
     </main>
-<!--    <div class="footer-banner" [class]="theme.name">-->
+    <!--    <div class="footer-banner" [class]="theme.name">-->
 
-<!--    </div>-->
+    <!--    </div>-->
     <footer class="site-footer" [class]="theme.name">
       <div class="footer-wrapper">
         <div class="container container-fluid">

@@ -1,12 +1,12 @@
-import {Component, Input} from '@angular/core';
-import {ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {ITheme, ThemeService} from "../../_helpers/theme.service";
+import {Component} from '@angular/core';
+import {ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {ThemeService} from "../../_helpers/theme.service";
 import {AsyncPipe} from "@angular/common";
 import {MatToolbar} from "@angular/material/toolbar";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatIcon, MatIconModule} from "@angular/material/icon";
-import {MatButton, MatButtonModule, MatIconButton} from "@angular/material/button";
-import {MatListItem, MatListModule} from "@angular/material/list";
+import { MatIconModule} from "@angular/material/icon";
+import { MatButtonModule} from "@angular/material/button";
+import { MatListModule} from "@angular/material/list";
+import { MatMenuModule} from "@angular/material/menu";
 
 @Component({
   selector: 'app-customer',
@@ -18,7 +18,9 @@ import {MatListItem, MatListModule} from "@angular/material/list";
     MatButtonModule,
     MatListModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    MatIconModule,
+    MatMenuModule
   ],
   templateUrl: './customer.component.html',
   styleUrl: './customer.component.scss'

@@ -17,6 +17,9 @@ header {
       }
     }
   }
+  .menu-mobile{
+    display: none;
+  }
 }
 
 mat-toolbar {
@@ -163,5 +166,11 @@ main {
     .logo {
       height: 50px;
     }
+  }
+  .menu{
+    display: none;
+  }
+  .menu-mobile{
+    display: block !important;
   }
 }
