@@ -1,9 +1,12 @@
 .container {
+  color: black;
   min-height: 100%;
   .btn-print{
     position: absolute;
     right: 20px;
     top: 10px;
+    background-color: var(--primary-800);
+    color: white;
   }
   .btn-sign{
     position: absolute;

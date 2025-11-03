@@ -1,0 +1,25 @@
+<div class="dnd-section ">
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Veelgestelde vragen</h1>
+      <p>Een vraag over uw project of werkwijze? Hier vindt u de antwoorden op de meest gestelde vragen.<br>
+        Staat uw vraag er niet tussen? Bel of mail gerust – wij staan voor u klaar.</p>
+    </div>
+    <div class="row">
+      @if (loading) {
+        <mat-spinner color="primary"></mat-spinner>
+      }
+      <mat-accordion>
+        @for (faq of questions; track faq) {
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title><h3>{{ faq.values.name }}</h3></mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="light" [innerHTML]="faq.values.description|safeHtml"></p>
+          </mat-expansion-panel>
+        }
+      </mat-accordion>
+    </div>
+
+  </div>
+</div>

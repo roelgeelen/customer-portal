@@ -1,22 +1,8 @@
 <div class="dnd-section">
-  <div class="min-height">
+  <div class="container-fluid">
     @defer (when customer !== null) {
-      @if (statuses.length > 0) {
-        @if (statusError) {
-          <div class="status-error">
-            <mat-icon>info_outlined</mat-icon>
-            Kon de huidige status niet ophalen
-          </div>
-        }
-        <mat-stepper [linear]="false" #stepper [selectedIndex]="index" [labelPosition]="labelPosition">
-          @for (status of statuses; track status) {
-            <mat-step [editable]="false">
-              <ng-template matStepLabel>{{ status }}</ng-template>
-            </mat-step>
-          }
-        </mat-stepper>
-      }
-      <h1>{{ customer?.name }}</h1>
+      <div class="row">
+      <h1>P{{ customer?.dealId }}</h1>
       <hr class="divider accent-text">
       @if (configurations.length > 0) {
         <h2>Bekijk hier uw configuraties</h2>
@@ -73,6 +59,7 @@
       } @else {
         <div class="empty">Nog geen configuraties</div>
       }
+    </div>
     } @placeholder {
       <mat-spinner color="primary"></mat-spinner>
     }

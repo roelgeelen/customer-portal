@@ -1,9 +1,9 @@
-import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ICustomer} from "../../../_models/customer.interface";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../../_services/api.service";
 import {IConfiguration} from "../../../_models/configuration.interface";
-import {AsyncPipe, DatePipe} from "@angular/common";
+import {DatePipe} from "@angular/common";
 import {MatButton} from "@angular/material/button";
 import {
   MatCell,
@@ -17,6 +17,7 @@ import {
 import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {MatStep, MatStepLabel, MatStepper, MatStepperModule} from "@angular/material/stepper";
+import {AuthenticationService} from "../../../_helpers/authentication.service";
 
 @Component({
   selector: 'app-history',
@@ -35,10 +36,8 @@ import {MatStep, MatStepLabel, MatStepper, MatStepperModule} from "@angular/mate
     MatProgressSpinner,
     MatButton,
     MatIconModule,
-    MatNoDataRow,
     DatePipe,
     MatStepperModule,
-    AsyncPipe
   ],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss'
@@ -52,11 +51,11 @@ export class HistoryComponent implements OnInit{
   loading = false;
   error = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService) {
+  constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService, private authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {
-    this.apiService.getCustomer(this.id).subscribe({
+    this.authenticationService.customer$.subscribe({
       next: (c) => {
         this.customer = c;
         this.getConfigurations();

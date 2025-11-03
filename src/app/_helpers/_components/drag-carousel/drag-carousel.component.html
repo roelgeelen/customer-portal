@@ -1,0 +1,32 @@
+<div
+  #viewport
+  class="carousel-viewport"
+  tabindex="0"
+  (pointerdown)="onPointerDown($event)"
+  (pointermove)="onPointerMove($event)"
+  (pointerup)="onPointerUp()"
+  (pointercancel)="onPointerUp()"
+  (pointerleave)="onPointerUp()"
+>
+  <div #track class="carousel-track" [style.--card-w.px]="cardWidth" [style.--gap.px]="gap">
+    <div class="item" *ngFor="let item of items; let i = index" (click)="routerLink(item.href, item.external)" tabindex="0">
+      <div class="card">
+        <img [src]="item.src" [alt]="item.title" draggable="false"/>
+        <div class="caption">
+          <h3 class="title">{{ item.title }}</h3>
+          <mat-icon class="material-icon">arrow_forward</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Progress bar -->
+<div class="progress-wrap" aria-hidden="true">
+  <div class="progress" [style.width.%]="progress * 100"></div>
+</div>
+
+<div class="carousel-controls">
+  <mat-icon (click)="prev()">arrow_backward</mat-icon>
+  <mat-icon (click)="next()">arrow_forward</mat-icon>
+</div>

@@ -1,44 +1,44 @@
 .dnd-section {
-  padding: 0 20px;
+  .row {
+    padding: 0 20px;
+  }
 
-  .min-height {
-    min-height: calc(100vh - 439px);
+  .status-error {
+    padding: 5px 10px;
+    border: 1px solid var(--warn);
+    background-color: var(--warn-50);
+    color: var(--warn);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 
-    .status-error{
-      padding: 5px 10px;
-      border: 1px solid var(--warn);
-      background-color: var(--warn-50);
-      color: var(--warn);
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      mat-icon {
-        margin-right: 5px;
-      }
-    }
-
-    .divider {
-      border-top: 5px solid;
-    }
-
-    .mat-mdc-row:hover .mat-mdc-cell {
-      background-color: #eaeaea;
-      cursor: pointer;
-    }
-
-    .mat-mdc-header-row {
-      font-size: 16px;
-    }
-
-    .empty {
-      text-align: center;
-      font-size: 16px;
-      padding: 15px;
-      color: #737382;
+    mat-icon {
+      margin-right: 5px;
     }
   }
+
+  .divider {
+    border-top: 5px solid;
+  }
+
+  .mat-mdc-row:hover .mat-mdc-cell {
+    background-color: #eaeaea;
+    cursor: pointer;
+  }
+
+  .mat-mdc-header-row {
+    font-size: 16px;
+  }
+
+  .empty {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+    color: #737382;
+  }
 }
-::ng-deep .mat-horizontal-stepper-header{
+
+::ng-deep .mat-horizontal-stepper-header {
   pointer-events: none !important;
 }
 
@@ -48,13 +48,14 @@
   max-height: 500px;
 }
 
-.mat-column-icons{
+.mat-column-icons {
   max-width: 65px;
 }
 
 .mobile-label {
   display: none;
 }
+
 .warning {
   color: orange;
 }
@@ -86,6 +87,7 @@
     overflow: hidden;
     box-shadow: 0 4px 10px #22233a33;
     padding: 8px;
+
     &:hover {
       background-color: #eaeaea;
     }

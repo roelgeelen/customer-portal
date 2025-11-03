@@ -2,14 +2,33 @@
 @use 'sass:map';
 @use "../components.style" as components;
 @use "./warn.scss" as warn;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
 @include mat.core();
+
+body { margin: 0; font-family: "Poppins", sans-serif; }
 
 $dark-primary-text: rgba(black, 0.87);
 $light-primary-text: white;
 $background-color: white;
 $background-accent-color: #e5e5e5;
+
+@font-face {
+  font-family: 'PPFuji';
+  src: url('/assets/theme/fonts/PPFuji-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPFuji';
+  src: url('/assets/theme/fonts/PPFuji-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 $palette: (
   50 : #fcede5,
@@ -17,7 +36,7 @@ $palette: (
   200 : #f5b493,
   300 : #f09568,
   400 : #ed7f47,
-  500 : #ea6827,
+  500 : #f49651 ,
   600 : #e76023,
   700 : #e4551d,
   800 : #e14b17,
@@ -48,6 +67,10 @@ $primary: mat.define-palette($palette);
 $accent: mat.define-palette($palette);
 $warn: mat.define-palette(warn.$md-warn);
 
+$typography: mat.define-typography-config(
+  $font-family: 'Poppins, sans-serif',
+);
+
 // color config function
 $theme: mat.define-light-theme((
   color: (
@@ -55,7 +78,7 @@ $theme: mat.define-light-theme((
     accent: $accent,
     warn: $warn
   ),
-  typography: mat.define-typography-config(),
+  typography: $typography,
   density: 0,
 ));
 
@@ -70,3 +93,31 @@ $theme: map_merge($theme, (background: $background));
 @include mat.all-component-themes($theme);
 @include components.theme($theme);
 
+mat-stepper {
+  /* Achtergrondkleur van het icoon */
+  --mat-stepper-header-icon-background-color: #{map.get($primary, 500)};
+  --mat-stepper-header-label-text-color: #{map.get($primary, 500)};
+
+  /* Geselecteerde state */
+  --mat-stepper-header-selected-state-icon-background-color: #{map.get($primary, 500)};
+  //--mat-stepper-header-selected-state-label-text-color: #{map.get($primary, 500)};
+  --mat-stepper-header-selected-state-label-text-weight: 600;
+
+  /* Afgeronde stap */
+  --mat-stepper-header-done-state-icon-background-color: var(--mat-sys-tertiary);
+  --mat-stepper-header-done-state-icon-foreground-color: var(--mat-sys-on-tertiary);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "PPFuji", sans-serif;
+  color: #333 !important;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-top: 0;
+}
+.dnd-section {
+  margin: 50px 0;
+}

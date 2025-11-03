@@ -2,7 +2,7 @@ export interface ICustomer
 {
   id: string;
   dealId?: string;
-  name: string;
+  // name: string;
 }
 export interface IRecentCustomer
 {

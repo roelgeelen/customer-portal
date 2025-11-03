@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-x: clip;
 }
 
 header {
@@ -10,6 +11,7 @@ header {
 
     mat-toolbar {
       background-color: #333;
+
       .logo {
         height: 80px;
         width: auto;
@@ -17,7 +19,8 @@ header {
       }
     }
   }
-  .menu-mobile{
+
+  .menu-mobile {
     display: none;
   }
 }
@@ -32,29 +35,70 @@ mat-toolbar {
 
   .logo {
     width: 325px;
-    padding: 30px 5px;
-  }
-
-  a {
-    margin-left: 10px;
+    padding: 30px 5px 20px 5px;
   }
 
   &.dark {
-    a {
+    .menu a {
       color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
 
       &.selected {
-        background-color: var(--primary-800);
+        background-color: var(--primary);
+      }
+    }
+
+    .menu-mobile {
+      color: white;
+    }
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    padding: .5rem 0 0;
+    position: relative;
+    color: var(--primary-800);
+    text-decoration: none;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &.selected {
+      span:before {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+
+    span {
+      position: relative;
+
+      &:before {
+        background-color: var(--primary);;
+        bottom: -1px;
+        content: "";
+        display: block;
+        height: 1px;
+        opacity: 0;
+        position: absolute;
+        transition: all .35s ease;
+        width: 0;
+        left: 0;
       }
     }
   }
 }
 
-.selected {
-  background-color: #f5f5f5;
-}
-
 .banner {
+  width: 100%;
+  margin-bottom: 20px;
+
   &.ambassa-theme {
     display: none;
   }
@@ -65,21 +109,24 @@ mat-toolbar {
 }
 
 .banner-image {
-  background-image: url(https://25493451.fs1.hubspotusercontent-eu1.net/hubfs/25493451/banner-1.png);
+  background-image: url(https://25493451.fs1.hubspotusercontent-eu1.net/hubfs/25493451/Different-Doors-expect-the-unexpected-v2-1.jpg.png);
   background-size: cover;
-  min-height: 55px;
+  min-height: 200px;
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: center top;
   display: flex;
   align-items: center;
   justify-content: center;
+
   .row {
     display: flex;
     align-items: center;
   }
+
   .text-end {
     text-align: right !important;
   }
+
   .col-6 {
     flex: 0 0 auto;
     display: flex;
@@ -117,7 +164,7 @@ main {
 //}
 .site-footer {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
 
   &.ambassa-theme {
     .footer-wrapper {
@@ -126,7 +173,7 @@ main {
     }
 
     &::before {
-      background-color: #f49651 !important;
+      background-color: var(--primary) !important;
       bottom: 0;
       content: "";
       height: 200px;
@@ -149,28 +196,58 @@ main {
     .container {
       padding: 0 15px;
 
-      .copyright-text {
+      .site-info {
+        display: flex;
+        justify-content: space-between;
         color: #ccc;
 
+
         a {
-          color: white;
           text-decoration: none;
+          color: #ccc;
+          &:hover {
+            color: white;
+            transition: 0.2s;
+          }
         }
+
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   mat-toolbar {
     .logo {
       height: 50px;
     }
   }
-  .menu{
+  .menu {
     display: none;
   }
-  .menu-mobile{
+  .menu-mobile {
     display: block !important;
+  }
+}
+
+@media (max-width: 576px) {
+  mat-toolbar {
+    .logo {
+      width: 230px;
+      padding: 15px 5px;
+    }
+  }
+  .ambassa-theme {
+    mat-toolbar {
+      .logo {
+        height: 60px !important;
+      }
+    }
+  }
+  .footer-wrapper {
+    .site-info {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }

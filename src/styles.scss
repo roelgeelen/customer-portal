@@ -3,9 +3,8 @@
 @include mat.core();
 @import "./assets/theme/responsive.style";
 
-
 html, body { height: 100%; }
-body { margin: 0; font-family: proxima-nova, "Helvetica Neue", sans-serif; }
+//body { margin: 0; fonts-family: proxima-nova, "Helvetica Neue", sans-serif; }
 :host {
   box-sizing: border-box;
   display: block;

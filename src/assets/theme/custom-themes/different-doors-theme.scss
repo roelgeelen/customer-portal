@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use "../components.style" as components;
 @use "./warn.scss" as warn;
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 
 @include mat.core();
@@ -10,6 +11,7 @@ $dark-primary-text: rgba(black, 0.87);
 $light-primary-text: white;
 $background-color: white;
 $background-accent-color: #ebf2f4;
+body { margin: 0; font-family: Sora, serif; }
 
 $palette: (
   50 : #e7eaf3,
@@ -77,9 +79,13 @@ $accent: (
   )
 );
 
-$primary: mat.define-palette($palette);
+$primary: mat.define-palette($accent);
 $accent: mat.define-palette($accent);
 $warn: mat.define-palette(warn.$md-warn);
+
+$typography: mat.define-typography-config(
+  $font-family: 'Sora, serif',
+);
 
 $theme: mat.define-light-theme((
   color: (
@@ -87,7 +93,7 @@ $theme: mat.define-light-theme((
     accent: $accent,
     warn: $warn
   ),
-  typography: mat.define-typography-config(),
+  typography: $typography,
   density: 0,
 ));
 
@@ -101,4 +107,35 @@ $theme: map_merge($theme, (background: $background));
 
 @include mat.all-component-themes($theme);
 @include components.theme($theme);
+mat-stepper {
+  /* Achtergrondkleur van het icoon */
+  --mat-stepper-header-icon-background-color: #{map.get($primary, 900)};
+  --mat-stepper-header-label-text-color: #{map.get($primary, 900)};
 
+  /* Geselecteerde state */
+  --mat-stepper-header-selected-state-icon-background-color: #{map.get($primary, 900)};
+  --mat-stepper-header-selected-state-label-text-weight: 600;
+
+  /* Afgeronde stap */
+  --mat-stepper-header-done-state-icon-background-color: var(--mat-sys-tertiary);
+  --mat-stepper-header-done-state-icon-foreground-color: var(--mat-sys-on-tertiary);
+}
+
+body {
+  color: #888;
+  font-weight: 400;
+  letter-spacing: -.48px;
+  line-height: 150%;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #000 !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.dnd-section {
+  margin: 20px 0 50px 0;
+}

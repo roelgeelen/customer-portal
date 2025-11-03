@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormPageComponent} from "./form-page/form-page.component";
 import {ApiService} from "../../../_services/api.service";
-import {RouterLink} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {IConfiguration, IConfigurationAttachment} from "../../../_models/configuration.interface";
 import {Title} from "@angular/platform-browser";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
@@ -42,7 +42,18 @@ export class ConfigurationComponent implements OnInit {
   @Input('extern') isExtern: string = '';
   configuration: IConfiguration | null = null;
 
-  constructor(private apiService: ApiService, private title: Title, public dialog: MatDialog) {
+  constructor(private apiService: ApiService, private title: Title, public dialog: MatDialog, private router: Router, private route: ActivatedRoute) {
+    this.route.queryParamMap.subscribe(queryParams => {
+      if (queryParams.has('sig')) {
+        localStorage.setItem('sig', queryParams.get('sig')!);
+        this.router.navigate([], {
+          queryParams: {
+            'sig': null
+          },
+          queryParamsHandling: 'merge'
+        })
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -53,7 +64,7 @@ export class ConfigurationComponent implements OnInit {
     this.apiService.getConfiguration(this.id, this.configId, this.isExtern === '1').subscribe(c => {
       this.configuration = c;
       if (this.configuration.customer.dealId != null) {
-        this.title.setTitle('P' + this.configuration.customer.dealId + ' - ' + this.configuration.customer.name)
+        this.title.setTitle('P' + this.configuration.customer.dealId)
       }
     });
   }

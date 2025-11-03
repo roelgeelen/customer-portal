@@ -1,10 +1,16 @@
 .container-fluid {
   max-width: 1340px;
 }
+.align-with-padding {
+  padding-left: calc((100vw - 1350px) / 2) !important;
+}
 
-@media (max-width: 1200px) {
+@media (max-width: 1335px) {
   .container-fluid {
     max-width: 960px;
+  }
+  .align-with-padding {
+    padding-left: calc((100vw - 970px) / 2) !important;
   }
 }
 
@@ -12,10 +18,24 @@
   .container-fluid {
     max-width: 720px;
   }
+  .align-with-padding {
+    padding-left: calc((100vw - 730px) / 2) !important;
+  }
 }
 
 @media (max-width: 767px) {
   .container-fluid {
     max-width: 540px;
+  }
+  .align-with-padding {
+    padding-left: max(20px, calc((100vw - 550px) / 2)) !important;
+  }
+}
+@media (max-width: 576px) {
+  .container-fluid {
+    max-width: 340px;
+  }
+  .align-with-padding {
+    padding-left: max(20px, calc((100vw - 350px) / 2)) !important;
   }
 }

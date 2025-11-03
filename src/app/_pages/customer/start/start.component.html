@@ -1,0 +1,138 @@
+@if (themeService.theme$|async; as theme) {
+  <div class="dnd-section" [class.ambassa-theme]="theme.name=='ambassa-theme'">
+    <div class="min-height">
+      @defer (when customer !== null) {
+        <div class="row reversed container-fluid">
+          @if (statuses.length > 0) {
+            <div class="col column-1">
+              @if (statusError) {
+                <div class="status-error">
+                  <mat-icon>info_outlined</mat-icon>
+                  Kon de huidige status niet ophalen
+                </div>
+              }
+              <h2>Status van uw project</h2>
+              <p>
+                Hieronder volgt u eenvoudig de status van uw project. Het stappenplan biedt direct inzicht in waar we
+                ons in het proces bevinden, welke taken zijn afgerond en wat de volgende stappen zijn. Zo bent u altijd
+                volledig geïnformeerd over de voortgang.
+              </p>
+              <mat-stepper orientation="vertical" [linear]="true" #stepper>
+                @for (status of statuses; track status; let i = $index) {
+                  <mat-step [editable]="false" [completed]="true">
+                    <ng-template matStepLabel>
+                      <div (click)="selectStep(i)"
+                           style="cursor:pointer">
+                        {{ status.label }}
+                      </div>
+                    </ng-template>
+                    <small [innerHTML]="status.description|safeHtml"></small>
+                  </mat-step>
+                }
+              </mat-stepper>
+            </div>
+          }
+          <div class="col contact-list">
+            <h2>Uw contactpersonen</h2>
+            <div class="contacts">
+              @if (contacts$|async; as contacts) {
+                @for (contact of contacts['results']; track contact) {
+                  <div class="contact">
+                    <div class="contact-image">
+                      <img
+                        [src]="'https://differentgroup.blob.core.windows.net/userpictures/'+contact['properties']['hs_email']+'.jpg'"
+                        alt="image">
+                    </div>
+                    <div class="contact-info">
+                      <div class="name">@if (contact['properties']['hs_job_title'] != null) {
+                        <span>{{ contact['properties']['hs_job_title'] }}</span><br>
+                      } {{ contact['properties']['hs_given_name'] }} {{ contact['properties']['hs_family_name'] }}
+                      </div>
+                      <small><a
+                        [href]="'mailto:'+contact['properties']['hs_email']">{{ contact['properties']['hs_email'] }}</a></small><br>
+                      <small><a
+                        [href]="'tel:'+contact['properties']['hs_main_phone']">{{ contact['properties']['hs_main_phone'] }}</a></small>
+                    </div>
+                  </div>
+                }
+              }
+              @if (theme.name == 'ambassa-theme') {
+                <div class="contact">
+                  <div class="contact-image">
+                    <img src="https://differentgroup.blob.core.windows.net/userpictures/ambassa.png"
+                         alt="image">
+                  </div>
+                  <div class="contact-info">
+                    <div class="name">Ambassa</div>
+                    <small><a href="mailto:info@ambassa.nl">info&#64;ambassa.nl</a></small><br>
+                    <small><a href="tel:+31(0)851609900">+31 (0)85 160 9900</a></small>
+                  </div>
+                </div>
+              } @else {
+                <div class="contact">
+                  <div class="contact-image">
+                    <img
+                      src="https://differentgroup.blob.core.windows.net/userpictures/a.developer@differentdoors.nl.jpg"
+                      alt="image">
+                  </div>
+                  <div class="contact-info">
+                    <div class="name">Different Doors</div>
+                    <small><a href="mailto:info@differentdoors.nl">info&#64;differentdoors.nl</a></small><br>
+                    <small><a href="tel:+31(0)851609988">+31 (0)85 160 99 88</a></small>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+        @if (theme.name == 'different-doors-theme') {
+          <div class="row container-full">
+            <div class="column-1 align-with-padding bg-white">
+              <div class="content">
+                <h2>Meer informatie</h2>
+                <p class="light">
+                  Naast de voortgang van uw project, vindt u hier ook alle belangrijke details en documentatie. <br><br>Bekijk
+                  de specificaties van de door u gekozen garagedeur of raadpleeg onze veelgestelde vragen. Alles
+                  handig gebundeld op één plek.
+                </p>
+              </div>
+            </div>
+            <div class="column-3">
+              <div class="spacer align-with-padding "></div>
+              <app-drag-carousel
+                class="carousel"
+                [items]="slides"
+                [cardWidth]="300"
+                [isExtern]="isExtern"
+                style="margin: 24px 0; display:block"
+              ></app-drag-carousel>
+            </div>
+          </div>
+        }
+        @if (theme.name == 'ambassa-theme') {
+          <div class="row container-fluid">
+            <div class="menu-list">
+              @for (slide of slides; track slide) {
+                <div drag-scroll-item class="menu-list__item">
+                  <div (click)="routerLink(slide.href, slide.external)" class="menu-card" draggable="false">
+                    <div class="menu-card__content">
+                      <div class="menu-card__image-wrapper">
+                        <img [src]="slide.src" class="menu-card__image" width="500" height="500" [alt]="slide.title">
+                      </div>
+                      <div class="menu-card__text">
+                        <small class="menu-card__label">Ambassa</small>
+                        <h3 class="menu-card__title">{{ slide.title }}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      } @placeholder {
+        <mat-spinner color="primary"></mat-spinner>
+      }
+    </div>
+  </div>
+}

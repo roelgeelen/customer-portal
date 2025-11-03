@@ -19,13 +19,13 @@
   <div class="form">
     <div class="breadcrumb">
       <span>
-        <a [routerLink]="'/customers/'+id" [queryParams]="{extern: isExtern}"
+        <a [routerLink]="'/customers/'+id+'/configurations'" [queryParams]="{extern: isExtern}"
            class="primary-text">Alle configuraties</a>
       </span>
       /
       <span>{{ configuration?.title }}</span>
     </div>
-    <app-form-page [title]="configuration?.title??''" [subtitle]="configuration?.customer?.name??''">
+    <app-form-page [title]="configuration?.title??''">
       @defer (when configuration) {
         <div class="form-section">
           <br>

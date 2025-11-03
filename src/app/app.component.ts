@@ -12,18 +12,6 @@ import {ThemeService} from "./_helpers/theme.service";
 export class AppComponent {
   constructor(protected themeService: ThemeService, private route: ActivatedRoute, private router: Router) {
 
-    this.route.queryParamMap.subscribe(queryParams => {
-      if (queryParams.has('sig')) {
-        localStorage.setItem('sig', queryParams.get('sig')!);
-        this.router.navigate([], {
-          queryParams: {
-            'sig': null
-          },
-          queryParamsHandling: 'merge'
-        })
-      }
-    });
-    console.log(window.location.hostname)
     if (window.location.hostname === 'configurations.ambassa.nl') {
       this.selectTheme('ambassa-theme')
     } else {
