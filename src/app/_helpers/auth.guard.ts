@@ -1,51 +1,53 @@
-import {inject} from '@angular/core';
-import {CanActivateFn, ActivatedRouteSnapshot, Router, UrlTree} from '@angular/router';
-import {combineLatest, of} from 'rxjs';
-import {filter, map, take, catchError} from 'rxjs/operators';
-import {AuthenticationService} from './authentication.service';
+// auth.guard.ts
+import { inject } from '@angular/core';
+import { CanActivateFn, ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
+import { of, combineLatest } from 'rxjs';
+import { filter, map, take, catchError } from 'rxjs/operators';
 
-export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot): any => {
-  const auth = inject(AuthenticationService);
+export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
   const router = inject(Router);
-  let sig = route.queryParamMap.get('sig');
-  if (sig) {
-    localStorage.setItem('sig', sig);
-    router.navigate([], {
-      queryParams: {sig: null},
-      queryParamsHandling: 'merge'
-    });
-  } else {
-    sig = localStorage.getItem('sig');
+  const auth   = inject(AuthenticationService);
+
+  // 1) SIG verwerken
+  const sigInUrl = route.queryParamMap.get('sig');
+  if (sigInUrl) {
+    localStorage.setItem('sig', sigInUrl);
+
+    // Strip 'sig' uit de huidige URL met RouterStateSnapshot
+    const tree = router.parseUrl(state.url);
+    // verwijder de query param 'sig'
+    if (tree.queryParams && 'sig' in tree.queryParams) {
+      const { sig, ...rest } = tree.queryParams as Record<string, any>;
+      tree.queryParams = rest;
+    }
+    return tree; // 👉 UrlTree teruggeven i.p.v. navigate()
   }
 
-  if (!sig) {
-    return of(router.createUrlTree(['/']));
-  }
+  const sig = localStorage.getItem('sig');
+  if (!sig) return router.createUrlTree(['/']);
 
+  // 2) Data laden
   const id = route.paramMap.get('id');
-  if (id) {
-    auth.getData(id);
-  }
+  if (id) auth.getData(id);
+
   const requiredStages = (route.data?.['requireDealStages'] as string[] | undefined) ?? null;
+
+  if (!requiredStages) {
+    return auth.customer$.pipe(
+      filter(Boolean),
+      take(1),
+      map(() => true as const),
+      catchError(() => of(router.createUrlTree(['/'])))
+    );
+  }
+
   return combineLatest([auth.customer$, auth.dealInfo$]).pipe(
-    filter(([customer, dealInfo]) => {
-      if (!customer) return false;
-      if (!requiredStages) return true;
-      return !!dealInfo;
-    }),
+    filter(([c, d]) => !!c && !!d),
     take(1),
-    map(([customer, dealInfo]): true | UrlTree => {
-      if (!customer) {
-        return router.createUrlTree(['/']);
-      }
-
-      if (!requiredStages) {
-        return true; // alleen customer nodig
-      }
-
-      const stage = (dealInfo as any)?.properties?.dealstage as string | undefined;
-      const ok = !!stage && requiredStages.includes(stage);
-      return ok ? true : router.createUrlTree(['/']);
+    map(([_, deal]) => {
+      const stage: string | undefined = (deal as any)?.properties?.dealstage;
+      return stage && requiredStages.includes(stage) ? true : router.createUrlTree(['/']);
     }),
     catchError(() => of(router.createUrlTree(['/'])))
   );
