@@ -5,9 +5,12 @@ import {ApiService} from "../../../_services/api.service";
 import {IFAQ} from "../../../_models/faq.interface";
 import {MatAccordion, MatExpansionModule} from "@angular/material/expansion";
 import {SafeHtmlPipe} from "../../../_helpers/pipes/safe-html.pipe";
-import {ICustomer} from "../../../_models/customer.interface";
-import {Router} from "@angular/router";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
+
+export interface FAQGroup {
+  key: string;
+  values: IFAQ[];
+}
 
 @Component({
   selector: 'app-history',
@@ -26,11 +29,11 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 export class FaqComponent implements OnInit {
   @Input() id: string = '';
   @Input('extern') isExtern: string = '';
-  questions: IFAQ[] = []
+  questions: FAQGroup[] = []
   loading = false;
   error = false;
 
-  constructor(private router: Router, private apiService: ApiService) {
+  constructor(private apiService: ApiService) {
   }
 
 
@@ -43,7 +46,15 @@ export class FaqComponent implements OnInit {
     this.error = false;
     this.apiService.getFAQ().subscribe({
       next: (c) => {
-        this.questions = c;
+        this.questions =  c.reduce((result: FAQGroup[], currentValue: IFAQ) => {
+          const group = result.find(g => g.key === currentValue.values.group) || result[result.push({
+            key: currentValue.values.group,
+            values: []
+          }) - 1];
+          group.values.push(currentValue);
+          return result;
+        }, []);
+        console.log(this.questions)
       },
       error: (_) => {
         this.loading = false
