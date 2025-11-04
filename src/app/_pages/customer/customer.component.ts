@@ -29,20 +29,20 @@ import {IDeal} from "../../_models/deal.interface";
 })
 export class CustomerComponent implements OnInit {
   id: string = '';
-  @Input('extern') isExtern: string = '';
+  isExtern: boolean = false;
   deal: IDeal | null = null;
 
   constructor(protected themeService: ThemeService, private route: ActivatedRoute, private authService: AuthenticationService) {
+    this.isExtern = localStorage.getItem('extern') === '1';
     this.route.children.forEach(child => {
       child.params.subscribe(params => {
         this.id = params['id'];
-        // dataService.getData(this.id);
       })
     });
   }
 
   get isCustomer() {
-    return this.authService.isCustomer();
+    return !this.isExtern && this.authService.isCustomer();
   }
 
 

@@ -11,8 +11,12 @@ export const customersIndexGuard: CanActivateFn = (route: ActivatedRouteSnapshot
   const id = route.paramMap.get('id');
   if (!id) return router.createUrlTree(['/']);
 
+  let extern = route.queryParamMap.get('extern');
+  if (extern) localStorage.setItem('extern', extern);
+
   let sig = route.queryParamMap.get('sig');
   if (sig) localStorage.setItem('sig', sig);
+  extern = extern ?? localStorage.getItem('extern');
   sig = sig ?? localStorage.getItem('sig');
   if (!sig) return router.createUrlTree(['/']);
 
@@ -24,9 +28,9 @@ export const customersIndexGuard: CanActivateFn = (route: ActivatedRouteSnapshot
     filter(([customer, dealInfo]) => !!customer && !!dealInfo),
     take(1),
     map(([_, dealInfo]): true | UrlTree => {
-      console.log(dealInfo);
+      console.log(extern);
       const stage: string | undefined = (dealInfo as any)?.properties?.dealstage;
-      const target = (stage && allowedStages.includes(stage))
+      const target = (stage && allowedStages.includes(stage)&&extern!="1")
         ? ['/customers', id, 'start']
         : ['/customers', id, 'configurations'];
 

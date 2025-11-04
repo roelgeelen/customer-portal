@@ -3,23 +3,25 @@
     <header [class]="theme.name">
       <div class="container-fluid">
         <mat-toolbar [class.dark]="theme.name=='ambassa-theme'">
-          <a [routerLink]="'/customers/'+ id" [queryParams]="{extern: isExtern}"><img
+          <a [routerLink]="'/customers/'+ id"><img
             [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo"></a>
           <span class="spacer"></span>
           <div class="menu">
             @if (isCustomer) {
-              <a class="nav-link" routerLink="/customers/{{id}}/start" [queryParams]="{extern: isExtern}"
-                 routerLinkActive="selected">
+              <a class="nav-link" routerLink="/customers/{{id}}/start" routerLinkActive="selected">
                 <span>Startpagina</span>
               </a>
             }
-            <a class="nav-link" routerLink="/customers/{{id}}/configurations" [queryParams]="{extern: isExtern}"
-               routerLinkActive="selected">
-              <span>Mijn configuratie</span>
+            <a class="nav-link" routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
+              @if (isCustomer) {
+                <span>Mijn configuratie</span>
+              } @else {
+                <span>Configuraties</span>
+              }
+
             </a>
             @if (isCustomer) {
-              <a class="nav-link" routerLink="/customers/{{id}}/history" [queryParams]="{extern: isExtern}"
-                 routerLinkActive="selected">
+              <a class="nav-link" routerLink="/customers/{{id}}/history" routerLinkActive="selected">
                 <span>Werkbonnen</span>
               </a>
             }
@@ -30,18 +32,19 @@
             </button>
             <mat-menu #menu="matMenu">
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}" [queryParams]="{extern: isExtern}"
-                   routerLinkActive="selected">
+                <a mat-menu-item routerLink="/customers/{{id}}" routerLinkActive="selected">
                   Startpagina
                 </a>
               }
-              <a mat-menu-item routerLink="/customers/{{id}}/configurations" [queryParams]="{extern: isExtern}"
-                 routerLinkActive="selected">
-                Mijn configuratie
+              <a mat-menu-item routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
+                @if (isCustomer) {
+                  Mijn configuratie
+                } @else {
+                  Configuraties
+                }
               </a>
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}/history" [queryParams]="{extern: isExtern}"
-                   routerLinkActive="selected">
+                <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected">
                   Werkbonnen
                 </a>
               }

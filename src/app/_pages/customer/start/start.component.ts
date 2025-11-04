@@ -32,16 +32,13 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
     DragCarouselComponent,
     SafeHtmlPipe,
     AsyncPipe,
-    DragScrollComponent,
-    DragScrollItemDirective,
-    RouterLink
+    DragScrollItemDirective
   ],
   templateUrl: './start.component.html',
   styleUrl: './start.component.scss',
 })
 export class StartComponent implements OnInit {
   @Input() id: string = '';
-  @Input('extern') isExtern: string = '';
   @ViewChild('stepper') stepper?: MatStepper;
   contacts$!: Observable<any>;
   customer: ICustomer | null = null;
@@ -158,7 +155,7 @@ export class StartComponent implements OnInit {
     if (external) {
       window.open(href, '_blank');
     } else {
-      this.router.navigate([href], {relativeTo: this.route, queryParams: {extern: this.isExtern}});
+      this.router.navigate([href], {relativeTo: this.route});
     }
   }
 }

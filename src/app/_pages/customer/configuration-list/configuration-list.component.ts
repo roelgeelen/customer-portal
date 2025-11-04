@@ -1,5 +1,4 @@
 import {
-  ChangeDetectorRef,
   Component,
   Input,
   OnInit,
@@ -50,7 +49,7 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
 })
 export class ConfigurationListComponent implements OnInit {
   @Input() id: string = '';
-  @Input('extern') isExtern: string = '';
+  isExtern: boolean = false;
   @ViewChild('stepper') stepper?: MatStepper;
   displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons'];
   customer: ICustomer | null = null;
@@ -66,6 +65,8 @@ export class ConfigurationListComponent implements OnInit {
     private apiService: ApiService,
     private authenticationService: AuthenticationService
   ) {
+    this.isExtern = localStorage.getItem('extern') === '1';
+    console.log(this.isExtern)
   }
 
   ngOnInit() {
@@ -91,7 +92,7 @@ export class ConfigurationListComponent implements OnInit {
   }
 
   selectRow(row: any) {
-    this.router.navigate([row.id], {relativeTo: this.route, queryParams: {extern: this.isExtern}});
+    this.router.navigate([row.id], {relativeTo: this.route});
   }
 
 }

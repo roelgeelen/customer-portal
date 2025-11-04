@@ -37,6 +37,7 @@ export const routes: Routes = [
         title: 'Garagedeur portaal',
         canActivate: [authGuard],
         data: {
+          allowExternal: false,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },
@@ -44,7 +45,10 @@ export const routes: Routes = [
         path: ':id/configurations',
         component: ConfigurationListComponent,
         title: 'configuration details',
-        canActivate: [authGuard]
+        canActivate: [authGuard],
+        data: {
+          allowExternal: true
+        }
       },
       {
         path: ':id/history',
@@ -52,6 +56,7 @@ export const routes: Routes = [
         title: 'History',
         canActivate: [authGuard],
         data: {
+          allowExternal: false,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },
@@ -61,6 +66,7 @@ export const routes: Routes = [
         title: 'Delen aanleveren',
         canActivate: [authGuard],
         data: {
+          allowExternal: false,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },
@@ -70,6 +76,7 @@ export const routes: Routes = [
         title: 'Belangrijke documenten',
         canActivate: [authGuard],
         data: {
+          allowExternal: false,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },
@@ -79,6 +86,7 @@ export const routes: Routes = [
         title: 'Veelgestelde vragen',
         canActivate: [authGuard],
         data: {
+          allowExternal: false,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },

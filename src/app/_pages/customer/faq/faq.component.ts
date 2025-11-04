@@ -28,7 +28,6 @@ export interface FAQGroup {
 })
 export class FaqComponent implements OnInit {
   @Input() id: string = '';
-  @Input('extern') isExtern: string = '';
   questions: FAQGroup[] = []
   loading = false;
   error = false;

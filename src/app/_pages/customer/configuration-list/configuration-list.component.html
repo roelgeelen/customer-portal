@@ -5,7 +5,11 @@
       <h1>P{{ customer?.dealId }}</h1>
       <hr class="divider accent-text">
       @if (configurations.length > 0) {
-        <h2>Bekijk hier uw configuraties</h2>
+        @if (isExtern) {
+          <h2>Bekijk hier de configuraties</h2>
+        } @else {
+          <h2>Bekijk hier uw configuraties</h2>
+        }
         @if (!loading && !error) {
           <mat-table mat-table [dataSource]="configurations">
             <!-- Name Column -->

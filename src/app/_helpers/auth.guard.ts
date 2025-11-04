@@ -10,16 +10,16 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
   const auth   = inject(AuthenticationService);
 
   // 1) SIG verwerken
+  const isExternUrl = route.queryParamMap.get('extern');
+  if (isExternUrl) {
+    localStorage.setItem('extern', isExternUrl);
+  }
   const sigInUrl = route.queryParamMap.get('sig');
   if (sigInUrl) {
     localStorage.setItem('sig', sigInUrl);
-
-    // Strip 'sig' uit de huidige URL met RouterStateSnapshot
     const tree = router.parseUrl(state.url);
-    // verwijder de query param 'sig'
     if (tree.queryParams && 'sig' in tree.queryParams) {
-      const { sig, ...rest } = tree.queryParams as Record<string, any>;
-      tree.queryParams = rest;
+      tree.queryParams = [];
     }
     return tree; // 👉 UrlTree teruggeven i.p.v. navigate()
   }
@@ -30,6 +30,13 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
   // 2) Data laden
   const id = route.paramMap.get('id');
   if (id) auth.getData(id);
+
+  const isExtern = localStorage.getItem('extern');
+  if (isExtern) {
+    if(!route.data?.['allowExternal'] as boolean) {
+      return router.createUrlTree(['/']);
+    }
+  }
 
   const requiredStages = (route.data?.['requireDealStages'] as string[] | undefined) ?? null;
 

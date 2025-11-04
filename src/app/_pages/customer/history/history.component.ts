@@ -11,12 +11,12 @@ import {
   MatColumnDef,
   MatHeaderCell, MatHeaderCellDef,
   MatHeaderRow,
-  MatHeaderRowDef, MatNoDataRow,
+  MatHeaderRowDef,
   MatRow, MatRowDef, MatTable
 } from "@angular/material/table";
-import {MatIcon, MatIconModule} from "@angular/material/icon";
+import { MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
-import {MatStep, MatStepLabel, MatStepper, MatStepperModule} from "@angular/material/stepper";
+import {MatStepperModule} from "@angular/material/stepper";
 import {AuthenticationService} from "../../../_helpers/authentication.service";
 
 @Component({
@@ -44,7 +44,6 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
 })
 export class HistoryComponent implements OnInit{
   @Input() id: string = '';
-  @Input('extern') isExtern: string = '';
   displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
@@ -83,7 +82,7 @@ export class HistoryComponent implements OnInit{
 
   selectRow(row: any) {
     console.log(this.route)
-    this.router.navigate([row.id], {relativeTo: this.route, queryParams: {extern: this.isExtern}});
+    this.router.navigate([row.id], {relativeTo: this.route});
   }
 
 }
