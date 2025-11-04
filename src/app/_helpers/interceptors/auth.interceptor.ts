@@ -17,7 +17,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: 
   const logoutAndRedirect = () => {
     localStorage.removeItem('sig');
     authService.clearInfo();
-    if (router.url !== '/') router.navigate(['/'], { replaceUrl: true });
+    router.navigate(['/'], { replaceUrl: true });
   };
 
   return next(req).pipe(
