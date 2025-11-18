@@ -61,7 +61,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   getConfiguration() {
-    this.apiService.getConfiguration(this.id, this.configId, this.isExtern === '1').subscribe(c => {
+    this.apiService.getConfiguration(this.id, this.configId).subscribe(c => {
       this.configuration = c;
       if (this.configuration.customer.dealId != null) {
         this.title.setTitle('P' + this.configuration.customer.dealId)

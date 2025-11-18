@@ -39,8 +39,8 @@ export class ApiService {
     return this.http.get<IConfiguration[]>(`${environment.apiUrl}/public/customer/${id}/configurations?type=${type}`);
   }
 
-  getConfiguration(id: string, configId: string, isExtern: boolean) {
-    return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}?extern=${isExtern}`);
+  getConfiguration(id: string, configId: string) {
+    return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}`);
   }
 
   saveSignature(id: string|undefined, configId: string, file: string, name: string) {
