@@ -16,6 +16,10 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
   }
   const sigInUrl = route.queryParamMap.get('sig');
   if (sigInUrl) {
+    var old = localStorage.getItem('sig');
+    if (old!==sigInUrl) {
+      localStorage.removeItem('extern');
+    }
     localStorage.setItem('sig', sigInUrl);
     const tree = router.parseUrl(state.url);
     if (tree.queryParams && 'sig' in tree.queryParams) {
