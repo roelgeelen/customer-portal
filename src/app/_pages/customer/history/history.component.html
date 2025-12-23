@@ -10,23 +10,23 @@
             <mat-table mat-table [dataSource]="configurations">
               <!-- Name Column -->
               <ng-container matColumnDef="title">
-                <mat-header-cell *matHeaderCellDef>Configuratie</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Werkbon</mat-header-cell>
                 <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
               </ng-container>
 
               <!-- Weight Column -->
-              <ng-container matColumnDef="updatedAt">
-                <mat-header-cell *matHeaderCellDef>Laatst aangepast</mat-header-cell>
+              <ng-container matColumnDef="createdAt">
+                <mat-header-cell *matHeaderCellDef>Aanmaakdatum</mat-header-cell>
                 <mat-cell *matCellDef="let element"><span
-                  class="mobile-label">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
+                  class="mobile-label">Aangemaakt op:</span>&nbsp;{{ element.createdAt | date: 'dd-MM-yyyy' }}
                 </mat-cell>
               </ng-container>
 
               <!-- Symbol Column -->
-              <ng-container matColumnDef="updatedBy">
-                <mat-header-cell *matHeaderCellDef>Aangepast door</mat-header-cell>
+              <ng-container matColumnDef="createdBy">
+                <mat-header-cell *matHeaderCellDef>Aangemaakt door</mat-header-cell>
                 <mat-cell *matCellDef="let element"><span
-                  class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}
+                  class="mobile-label">Aangemaakt door:</span>&nbsp;{{ element.createdBy }}
                 </mat-cell>
               </ng-container>
 

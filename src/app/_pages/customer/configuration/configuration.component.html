@@ -116,6 +116,14 @@
                         }
                       </table>
                     }
+                    @case ('Signature') {
+                      <h3>{{ value.title }}</h3>
+                      @if (value.value) {
+                        <img [src]="value.value.url" alt="afbeelding">
+                      } @else {
+                        <div class="empty">Geen handtekening</div>
+                      }
+                    }
                     @default {
                       <table [class.table-responsive]="value.columns">
                         <tr>

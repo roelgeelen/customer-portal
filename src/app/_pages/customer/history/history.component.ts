@@ -44,7 +44,7 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
 })
 export class HistoryComponent implements OnInit{
   @Input() id: string = '';
-  displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons'];
+  displayedColumns: string[] = ['title', 'createdAt', 'createdBy', 'icons'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
   loading = false;
