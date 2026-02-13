@@ -15,6 +15,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ImageSliderComponent} from "../../../_helpers/_components/image-slider/image-slider.component";
 import {DatePipe} from "@angular/common";
 import {NgImageSliderModule} from "ng-image-slider";
+import {ChangesDialogComponent} from "./changes-dialog/changes-dialog.component";
 
 @Component({
   selector: 'app-configuration',
@@ -86,6 +87,15 @@ export class ConfigurationComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.getConfiguration();
     })
+  }
+
+  openChanges() {
+    this.dialog.open(ChangesDialogComponent, {
+      data: {
+        id: this.id,
+        configId: this.configId,
+      }
+    });
   }
 
 

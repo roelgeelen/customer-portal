@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>Wijzigingen na akkoord</h1>
+<div mat-dialog-content #dialog>
+  @if (changes$| async; as list) {
+    @for (change of list; track change) {
+      <div class="changelog-card">
+        <div class="changelog-header header-jan">
+          <span>{{ change.createdBy }}</span>
+          <span>{{ change.createdAt | date: 'dd-MM-yyyy HH:mm' }}</span>
+        </div>
+        <div class="changelog-body">
+          @for (c of change.changes; track c) {
+            <div class="change-item">
+              <span class="title-value">{{ c.fieldName }}:</span><span class="old-value">
+              <ng-container
+                *ngTemplateOutlet="dialogActions; context: {type:c.fieldType, value: c.oldValue}"></ng-container>
+            </span>
+              →
+              <span class="new-value">
+                <ng-container
+                  *ngTemplateOutlet="dialogActions; context: {type:c.fieldType, value: c.newValue}"></ng-container>
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+    } @empty {
+      Geen wijzigingen gevonden
+    }
+
+  } @else {
+    <mat-spinner color="primary"></mat-spinner>
+  }
+</div>
+
+<ng-template #dialogActions let-type='type' let-value='value'>
+  @if (value) {
+    @switch (type) {
+      @case ('TextArea') {
+        <span class="block full" [innerHTML]="value | safeHtml"></span>
+      }
+      @case ('Table') {
+        <table class="full">
+          @for (row of value; track row) {
+            <tr>
+              @for (col of row|keyvalue; track col) {
+                <td>{{ col.key }}: {{ col.value }}</td>
+              }
+            </tr>
+          }
+        </table>
+      }
+      @case ('FileUpload') {
+        @for (file of normalizedFiles(value); track file) {
+          <span class="block file">{{ file.name }}</span>
+        }
+      }
+      @case ('ImageUpload') {
+        <div class="block">
+          @for (file of normalizedFiles(value); track file) {
+            <img [src]="file.url" alt="afbeelding">
+          }
+        </div>
+      }
+      @case ('ImageCarousel') {
+        <div class="block">
+          @for (file of normalizedFiles(value); track file) {
+            <img [src]="file.url" alt="afbeelding">
+          }
+        </div>
+      }
+      @case ('Signature') {
+        <div class="block">
+          <img [src]="value.url" alt="afbeelding">
+        </div>
+      }
+      @default {
+        {{ value }}
+      }
+    }
+  }
+</ng-template>

@@ -2,6 +2,9 @@
   <button mat-fab color="primary" class="btn-print" (click)="print()">
     <mat-icon>print</mat-icon>
   </button>
+  <button mat-fab color="primary" class="btn-history" (click)="openChanges()">
+    <mat-icon>history</mat-icon>
+  </button>
   @if (configuration?.preview?.approval != undefined) {
     @if (configuration?.preview?.approval?.name != undefined) {
       <div class="customer-approval"
@@ -16,6 +19,10 @@
       </button>
     }
   }
+<!--  <button mat-raised-button class="btn-changes" color="success" (click)="openChanges()">-->
+<!--    <mat-icon>history</mat-icon>-->
+<!--    Aanpassingen-->
+<!--  </button>-->
   <div class="form">
     <div class="breadcrumb">
       <span>

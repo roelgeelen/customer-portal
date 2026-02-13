@@ -1,0 +1,74 @@
+.changelog-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  min-width: 50vw;
+}
+.changelog-header {
+  background-color: var(--primary) ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  gap: 20px;
+}
+.changelog-body {
+  padding: 12px 16px;
+  font-size: 14px;
+  background: #fff;
+}
+.change-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.title-value {
+  color: black;
+  font-weight: bold;
+  margin-right: 6px;
+}
+.old-value {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-weight: normal;
+  padding: 2px;
+}
+.new-value {
+  padding: 2px;
+  color: forestgreen;
+  font-weight: normal;
+}
+.icon {
+  margin-right: 6px;
+}
+.block {
+  display: inline-block;
+  padding: 0 2px;
+  &.file {
+    padding: 1px 5px;
+    border: solid 1px #979797;
+    background-color: #f8fafb;
+    border-radius: 5px;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.name {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 3px 10px 3px 0;
+  }
+
+  img {
+    flex: 1;
+    height: 50px;
+  }
+}
+

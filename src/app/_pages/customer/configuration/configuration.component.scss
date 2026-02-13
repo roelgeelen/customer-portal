@@ -8,16 +8,23 @@
     background-color: var(--primary-800);
     color: white;
   }
-  .btn-sign{
+  .btn-history{
     position: absolute;
     right: 100px;
+    top: 10px;
+    background-color: var(--primary-800);
+    color: white;
+  }
+  .btn-sign{
+    position: absolute;
+    right: 180px;
     top: 20px;
     background-color: forestgreen;
     color: white;
   }
   .customer-approval {
     position: absolute;
-    right: 100px;
+    right: 180px;
     top: 20px;
     color: forestgreen;
     display: flex;

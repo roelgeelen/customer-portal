@@ -6,6 +6,7 @@ import {environment} from "../../environments/environment";
 import {IStatus} from "../_models/status.interface";
 import {IFAQ} from "../_models/faq.interface";
 import {IDeal} from "../_models/deal.interface";
+import {IConfigChanges} from "../_models/configuration-change.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,10 @@ export class ApiService {
 
   getConfiguration(id: string, configId: string) {
     return this.http.get<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}`);
+  }
+
+  getChanges(id: string, configId: string) {
+    return this.http.get<any>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}/changes`);
   }
 
   saveSignature(id: string|undefined, configId: string, file: string, name: string) {
