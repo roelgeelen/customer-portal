@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../../_services/api.service";
 import {IConfiguration} from "../../../_models/configuration.interface";
 import {DatePipe} from "@angular/common";
-import {MatButton} from "@angular/material/button";
+import {MatButtonModule} from "@angular/material/button";
 import {
   MatCell,
   MatCellDef,
@@ -34,17 +34,17 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
     MatRow,
     MatRowDef,
     MatProgressSpinner,
-    MatButton,
     MatIconModule,
     DatePipe,
     MatStepperModule,
+    MatButtonModule,
   ],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss'
 })
 export class HistoryComponent implements OnInit{
   @Input() id: string = '';
-  displayedColumns: string[] = ['title', 'createdAt', 'createdBy', 'icons'];
+  displayedColumns: string[] = ['title', 'createdAt', 'createdBy', 'icons', 'button'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
   loading = false;

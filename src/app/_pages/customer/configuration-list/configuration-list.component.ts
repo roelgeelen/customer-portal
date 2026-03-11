@@ -18,7 +18,7 @@ import {ApiService} from "../../../_services/api.service";
 import {ICustomer} from "../../../_models/customer.interface";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {IConfiguration} from "../../../_models/configuration.interface";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
 import {MatStepper, MatStepperModule} from "@angular/material/stepper";
@@ -43,6 +43,7 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
     MatIconModule,
     DatePipe,
     MatStepperModule,
+    MatButtonModule
   ],
   templateUrl: './configuration-list.component.html',
   styleUrl: './configuration-list.component.scss'
@@ -50,8 +51,7 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
 export class ConfigurationListComponent implements OnInit {
   @Input() id: string = '';
   isExtern: boolean = false;
-  @ViewChild('stepper') stepper?: MatStepper;
-  displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons'];
+  displayedColumns: string[] = ['title', 'updatedAt', 'updatedBy', 'icons', 'button'];
   customer: ICustomer | null = null;
   configurations: IConfiguration[] = []
   loading = false;

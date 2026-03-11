@@ -34,7 +34,7 @@
               </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="icons" stickyEnd>
+            <ng-container matColumnDef="icons">
               <mat-header-cell *matHeaderCellDef></mat-header-cell>
               <mat-cell *matCellDef="let element">
                 @if (element.preview?.approval != undefined) {
@@ -44,6 +44,12 @@
                     <mat-icon class="warning">warning</mat-icon>
                   }
                 }
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="button" stickyEnd>
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <a mat-raised-button color="primary" class="row-action-button">Open configuratie</a>
               </mat-cell>
             </ng-container>
 
