@@ -7,11 +7,12 @@
             [src]="theme.name=='ambassa-theme'?theme.imageLight:theme.imageDark" alt="Logo" class="logo"></a>
           <span class="spacer"></span>
           <div class="menu">
-            @if (isCustomer) {
+            @if (isDealStage) {
               <a class="nav-link" routerLink="/customers/{{id}}/start" routerLinkActive="selected">
                 <span>Startpagina</span>
               </a>
             }
+
             <a class="nav-link" routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
               @if (isCustomer) {
                 <span>Mijn configuratie</span>

@@ -38,7 +38,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         data: {
           allowExternal: false,
-          requireDealStages: ['136638156', '57521142', 'closedwon']
+          requireDealStages: ['qualifiedtobuy', '136638156', '57521142', 'closedwon']
         }
       },
       {

@@ -45,6 +45,10 @@ export class CustomerComponent implements OnInit {
     return !this.isExtern && this.authService.isCustomer();
   }
 
+  get isDealStage() {
+    return !this.isExtern && this.authService.isDealStage();
+  }
+
 
   ngOnInit() {
     this.authService.dealInfo$.subscribe(deal => {

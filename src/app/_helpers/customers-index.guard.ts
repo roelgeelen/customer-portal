@@ -22,13 +22,12 @@ export const customersIndexGuard: CanActivateFn = (route: ActivatedRouteSnapshot
 
   auth.getData(id);
 
-  const allowedStages = ['136638156', '57521142', 'closedwon'];
+  const allowedStages = ['qualifiedtobuy','136638156', '57521142', 'closedwon'];
 
   return combineLatest([auth.customer$, auth.dealInfo$]).pipe(
     filter(([customer, dealInfo]) => !!customer && !!dealInfo),
     take(1),
     map(([_, dealInfo]): true | UrlTree => {
-      console.log(extern);
       const stage: string | undefined = (dealInfo as any)?.properties?.dealstage;
       const target = (stage && allowedStages.includes(stage)&&extern!="1")
         ? ['/customers', id, 'start']

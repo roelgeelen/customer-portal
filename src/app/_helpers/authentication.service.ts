@@ -40,7 +40,12 @@ export class AuthenticationService {
     this.dealInfo$.next(null);
     this.customer$.next(null);
   }
+
   public isCustomer(): boolean {
     return ['136638156', '57521142', 'closedwon'].includes(this.dealInfo?.properties.dealstage ?? '');
+  }
+
+  public isDealStage(): boolean {
+    return ['qualifiedtobuy', '136638156', '57521142', 'closedwon'].includes(this.dealInfo?.properties.dealstage ?? '');
   }
 }
