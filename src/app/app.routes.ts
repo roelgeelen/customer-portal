@@ -47,16 +47,30 @@ export const routes: Routes = [
         title: 'configuration details',
         canActivate: [authGuard],
         data: {
+          configType: 'configuration',
           allowExternal: true
         }
       },
       {
         path: ':id/history',
-        component: HistoryComponent,
+        component: ConfigurationListComponent,
         title: 'History',
         canActivate: [authGuard],
         data: {
+          configType: 'workorder',
           allowExternal: false,
+          requireDealStages: ['136638156', '57521142', 'closedwon']
+        }
+      },
+      {
+        path: ':id/intern',
+        component: ConfigurationListComponent,
+        title: 'Intern',
+        canActivate: [authGuard],
+        data: {
+          configType: 'intern',
+          allowExternal: true,
+          onlyExternal: true,
           requireDealStages: ['136638156', '57521142', 'closedwon']
         }
       },
@@ -101,5 +115,15 @@ export const routes: Routes = [
     path: 'customers/:id/history/:configId',
     component: ConfigurationComponent,
     title: 'Configuration'
+  },
+  {
+    path: 'customers/:id/intern/:configId',
+    component: ConfigurationComponent,
+    title: 'Configuration',
+    canActivate: [authGuard],
+    data: {
+      allowExternal: true,
+      onlyExternal: true
+    }
   },
 ];

@@ -70,16 +70,17 @@ export class ConfigurationListComponent implements OnInit {
   }
 
   ngOnInit() {
+    const type = this.route.snapshot.data['configType'];
     this.authenticationService.customer$.subscribe(c => {
       this.customer = c;
     });
-    this.getConfigurations();
+    this.getConfigurations(type);
   }
 
-  getConfigurations() {
+  getConfigurations(type: string) {
     this.loading = true;
     this.error = false;
-    this.apiService.getConfigurations(this.id, 'configuration').subscribe({
+    this.apiService.getConfigurations(this.id, type).subscribe({
       next: (c) => {
         this.configurations = c;
       },

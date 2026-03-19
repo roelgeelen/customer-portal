@@ -42,6 +42,10 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
     }
   }
 
+  if(route.data?.['onlyExternal'] as boolean && !isExtern) {
+    return router.createUrlTree(['/']);
+  }
+
   const requiredStages = (route.data?.['requireDealStages'] as string[] | undefined) ?? null;
 
   if (!requiredStages) {

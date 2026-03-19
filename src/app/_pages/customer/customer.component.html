@@ -26,6 +26,12 @@
                 <span>Werkbonnen</span>
               </a>
             }
+
+            @if (isExtern) {
+              <a class="nav-link" routerLink="/customers/{{id}}/intern" routerLinkActive="selected">
+                <span>Intern</span>
+              </a>
+            }
           </div>
           <div class="menu-mobile">
             <button mat-icon-button [matMenuTriggerFor]="menu">
