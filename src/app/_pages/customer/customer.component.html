@@ -9,29 +9,33 @@
           <div class="menu">
             @if (isDealStage) {
               <a class="nav-link" routerLink="/customers/{{id}}/start" routerLinkActive="selected">
-                <span>Startpagina</span>
+                <span i18n="@@nav.home">Startpagina</span>
               </a>
             }
 
             <a class="nav-link" routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
               @if (isCustomer) {
-                <span>Mijn configuratie</span>
+                <span i18n="@@nav.my_configuration">Mijn configuratie</span>
               } @else {
-                <span>Configuraties</span>
+                <span i18n="@@nav.configurations">Configuraties</span>
               }
-
             </a>
             @if (isCustomer) {
               <a class="nav-link" routerLink="/customers/{{id}}/history" routerLinkActive="selected">
-                <span>Werkbonnen</span>
+                <span i18n="@@nav.work_orders">Werkbonnen</span>
               </a>
             }
 
             @if (isExtern) {
               <a class="nav-link" routerLink="/customers/{{id}}/intern" routerLinkActive="selected">
-                <span>Intern</span>
+                <span i18n="@@nav.internal">Intern</span>
               </a>
             }
+          </div>
+          <div class="lang-switch">
+            <button class="lang-btn" [class.active]="localeService.currentLocale === 'nl'" (click)="localeService.switchToLocale('nl')">NL</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" [class.active]="localeService.currentLocale === 'en'" (click)="localeService.switchToLocale('en')">EN</button>
           </div>
           <div class="menu-mobile">
             <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -39,19 +43,19 @@
             </button>
             <mat-menu #menu="matMenu">
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}" routerLinkActive="selected">
+                <a mat-menu-item routerLink="/customers/{{id}}" routerLinkActive="selected" i18n="@@nav.home">
                   Startpagina
                 </a>
               }
               <a mat-menu-item routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
                 @if (isCustomer) {
-                  Mijn configuratie
+                  <ng-container i18n="@@nav.my_configuration">Mijn configuratie</ng-container>
                 } @else {
-                  Configuraties
+                  <ng-container i18n="@@nav.configurations">Configuraties</ng-container>
                 }
               </a>
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected">
+                <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected" i18n="@@nav.work_orders">
                   Werkbonnen
                 </a>
               }
@@ -85,10 +89,10 @@
               © 2025 {{ theme.displayName }}
             </div>
             <div class="links">
-              <a href="https://www.differentdoors.nl/privacy-policy/">Privacy policy</a> |
+              <a href="https://www.differentdoors.nl/privacy-policy/" i18n="@@footer.privacy">Privacy policy</a> |
               <a
                 href="https://25493451.fs1.hubspotusercontent-eu1.net/hubfs/25493451/Algemene%20voorwaarden%202025%20-%20Different%20Doors.pdf"
-                target="_blank" rel="noopener">Algemene voorwaarden</a>
+                target="_blank" rel="noopener" i18n="@@footer.terms">Algemene voorwaarden</a>
             </div>
           </div>
         </div>

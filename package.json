@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:nl": "ng build --configuration=production,nl",
+    "build:en": "ng build --configuration=production,en",
+    "build:all": "npm run build:nl && npm run build:en",
+    "extract-i18n": "ng extract-i18n --output-path src/locale",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,6 +24,7 @@
     "@angular/compiler": "^18.2.13",
     "@angular/core": "^18.2.13",
     "@angular/forms": "^18.2.13",
+    "@angular/localize": "^18.2.14",
     "@angular/material": "^17.1.1",
     "@angular/platform-browser": "^18.2.13",
     "@angular/platform-browser-dynamic": "^18.2.13",

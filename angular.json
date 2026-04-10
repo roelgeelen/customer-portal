@@ -13,6 +13,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": {
+          "code": "nl",
+          "baseHref": "/nl/"
+        },
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -63,6 +75,12 @@
                 }
               ],
               "outputHashing": "all"
+            },
+            "nl": {
+              "localize": ["nl"]
+            },
+            "en": {
+              "localize": ["en"]
             },
             "development": {
               "optimization": false,
