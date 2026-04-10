@@ -1,25 +1,25 @@
-<h1 mat-dialog-title>Ondertekenen</h1>
+<h1 mat-dialog-title i18n="@@approval_dialog.title">Ondertekenen</h1>
 <div mat-dialog-content #dialog>
   <form (ngSubmit)="sign(signName.value)">
     <mat-form-field class="field">
-      <mat-label>Naam</mat-label>
+      <mat-label i18n="@@approval_dialog.name_label">Naam</mat-label>
       <input #signName="ngModel" ngModel matInput type="text"
              [ngModelOptions]="{standalone: true}" required>
       @if (signName.invalid) {
-        <mat-error>Naam is verplicht</mat-error>
+        <mat-error i18n="@@approval_dialog.name_required">Naam is verplicht</mat-error>
       }
     </mat-form-field>
-    <div class="label">Handtekening</div>
+    <div class="label" i18n="@@approval_dialog.signature_label">Handtekening</div>
     <signature-pad #signature [options]="signaturePadOptions"></signature-pad>
     <br>
     <button mat-raised-button color="primary" type="submit">
       @if (!loading) {
-        save
+        <span i18n="@@approval_dialog.save_button">Opslaan</span>
       } @else {
-        <mat-spinner class="white" [diameter]="20">save</mat-spinner>
+        <mat-spinner class="white" [diameter]="20"></mat-spinner>
       }
     </button>
 
-    <button mat-button (click)="clear()" type="button">Clear</button>
+    <button mat-button (click)="clear()" type="button" i18n="@@approval_dialog.clear_button">Wissen</button>
   </form>
 </div>

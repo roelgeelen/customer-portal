@@ -6,31 +6,31 @@
       <hr class="divider accent-text">
       @if (configurations.length > 0) {
         @if (isExtern) {
-          <h2>Bekijk hier de configuraties</h2>
+          <h2 i18n="@@config_list.title_extern">Bekijk hier de configuraties</h2>
         } @else {
-          <h2>Bekijk hier uw configuraties</h2>
+          <h2 i18n="@@config_list.title_customer">Bekijk hier uw configuraties</h2>
         }
         @if (!loading && !error) {
           <mat-table mat-table [dataSource]="configurations">
             <!-- Name Column -->
             <ng-container matColumnDef="title">
-              <mat-header-cell *matHeaderCellDef>Configuratie</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef i18n="@@config_list.col_configuration">Configuratie</mat-header-cell>
               <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
             </ng-container>
 
             <!-- Weight Column -->
             <ng-container matColumnDef="updatedAt">
-              <mat-header-cell *matHeaderCellDef>Laatst aangepast</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef i18n="@@config_list.col_last_modified">Laatst aangepast</mat-header-cell>
               <mat-cell *matCellDef="let element"><span
-                class="mobile-label">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
+                class="mobile-label" i18n="@@config_list.mobile_last_modified">Laatst aangepast:</span> {{ element.updatedAt | date: 'dd-MM-yyyy' }}
               </mat-cell>
             </ng-container>
 
             <!-- Symbol Column -->
             <ng-container matColumnDef="updatedBy">
-              <mat-header-cell *matHeaderCellDef>Aangepast door</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef i18n="@@config_list.col_modified_by">Aangepast door</mat-header-cell>
               <mat-cell *matCellDef="let element"><span
-                class="mobile-label">Aangepast door:</span> {{ element.updatedBy }}
+                class="mobile-label" i18n="@@config_list.mobile_modified_by">Aangepast door:</span> {{ element.updatedBy }}
               </mat-cell>
             </ng-container>
 
@@ -49,7 +49,7 @@
             <ng-container matColumnDef="button" stickyEnd>
               <mat-header-cell *matHeaderCellDef></mat-header-cell>
               <mat-cell *matCellDef="let element">
-                <a mat-raised-button color="primary" class="row-action-button">Open configuratie</a>
+                <a mat-raised-button color="primary" class="row-action-button" i18n="@@config_list.open_button">Open configuratie</a>
               </mat-cell>
             </ng-container>
 
@@ -61,13 +61,13 @@
           <mat-spinner color="primary"></mat-spinner>
         }
         @if (error) {
-          Kon configuraties niet ophalen, probeer het opnieuw:
+          <span i18n="@@config_list.load_error">Kon configuraties niet ophalen, probeer het opnieuw:</span>
           <button mat-raised-button color="primary">
             <mat-icon>refresh</mat-icon>
           </button>
         }
       } @else {
-        <div class="empty">Nog geen configuraties</div>
+        <div class="empty" i18n="@@config_list.empty">Nog geen configuraties</div>
       }
     </div>
     } @placeholder {

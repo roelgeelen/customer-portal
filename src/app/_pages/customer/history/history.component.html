@@ -5,28 +5,28 @@
         <h1>P{{ customer?.dealId }}</h1>
         <hr class="divider accent-text">
         @if (configurations.length > 0) {
-          <h2>Historie</h2>
+          <h2 i18n="@@history.title">Historie</h2>
           @if (!loading && !error) {
             <mat-table mat-table [dataSource]="configurations">
               <!-- Name Column -->
               <ng-container matColumnDef="title">
-                <mat-header-cell *matHeaderCellDef>Werkbon</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef i18n="@@history.col_work_order">Werkbon</mat-header-cell>
                 <mat-cell *matCellDef="let element" class="row-title">{{ element.title }}</mat-cell>
               </ng-container>
 
               <!-- Weight Column -->
               <ng-container matColumnDef="createdAt">
-                <mat-header-cell *matHeaderCellDef>Aanmaakdatum</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef i18n="@@history.col_created_at">Aanmaakdatum</mat-header-cell>
                 <mat-cell *matCellDef="let element"><span
-                  class="mobile-label">Aangemaakt op:</span>&nbsp;{{ element.createdAt | date: 'dd-MM-yyyy' }}
+                  class="mobile-label" i18n="@@history.mobile_created_at">Aangemaakt op:</span>&nbsp;{{ element.createdAt | date: 'dd-MM-yyyy' }}
                 </mat-cell>
               </ng-container>
 
               <!-- Symbol Column -->
               <ng-container matColumnDef="createdBy">
-                <mat-header-cell *matHeaderCellDef>Aangemaakt door</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef i18n="@@history.col_created_by">Aangemaakt door</mat-header-cell>
                 <mat-cell *matCellDef="let element"><span
-                  class="mobile-label">Aangemaakt door:</span>&nbsp;{{ element.createdBy }}
+                  class="mobile-label" i18n="@@history.mobile_created_by">Aangemaakt door:</span>&nbsp;{{ element.createdBy }}
                 </mat-cell>
               </ng-container>
 
@@ -45,7 +45,7 @@
               <ng-container matColumnDef="button" stickyEnd>
                 <mat-header-cell *matHeaderCellDef></mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                  <a mat-raised-button color="primary" class="row-action-button">Open werkbon</a>
+                  <a mat-raised-button color="primary" class="row-action-button" i18n="@@history.open_button">Open werkbon</a>
                 </mat-cell>
               </ng-container>
 
@@ -57,13 +57,13 @@
             <mat-spinner color="primary"></mat-spinner>
           }
           @if (error) {
-            Kon configuraties niet ophalen, probeer het opnieuw:
+            <span i18n="@@history.load_error">Kon werkbonnen niet ophalen, probeer het opnieuw:</span>
             <button mat-raised-button color="primary">
               <mat-icon>refresh</mat-icon>
             </button>
           }
         } @else {
-          <div class="empty">Nog geen werkbonnen</div>
+          <div class="empty" i18n="@@history.empty">Nog geen werkbonnen</div>
         }
       </div>
     } @placeholder {

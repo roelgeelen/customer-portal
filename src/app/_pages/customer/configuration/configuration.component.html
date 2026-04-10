@@ -10,24 +10,20 @@
       <div class="customer-approval"
            [matTooltip]="(configuration?.preview?.approval?.date|date:'yyyy-MM-dd') + ' - '+ (configuration?.preview?.approval?.name ?? '')">
         <mat-icon>check</mat-icon>
-        Goedgekeurd
+        <span i18n="@@config.approved">Goedgekeurd</span>
       </div>
     } @else {
       <button mat-raised-button class="btn-sign" color="success" (click)="openDialog(configuration)">
         <mat-icon>draw</mat-icon>
-        Ondertekenen
+        <span i18n="@@config.sign">Ondertekenen</span>
       </button>
     }
   }
-<!--  <button mat-raised-button class="btn-changes" color="success" (click)="openChanges()">-->
-<!--    <mat-icon>history</mat-icon>-->
-<!--    Aanpassingen-->
-<!--  </button>-->
   <div class="form">
     <div class="breadcrumb">
       <span>
         <a [routerLink]="'/customers/'+id+'/configurations'" [queryParams]="{extern: isExtern}"
-           class="primary-text">Alle configuraties</a>
+           class="primary-text" i18n="@@config.all_configurations">Alle configuraties</a>
       </span>
       /
       <span>{{ configuration?.title }}</span>
@@ -38,14 +34,14 @@
           <br>
           <table>
             <tr>
-              <th>Ingevuld door</th>
+              <th i18n="@@config.filled_by">Ingevuld door</th>
               <td colspan="3">{{ configuration?.createdBy }}</td>
             </tr>
           </table>
           @if (configuration?.customer?.dealId) {
             <table>
               <tr>
-                <th>Referentie</th>
+                <th i18n="@@config.reference">Referentie</th>
                 <td colspan="3">P{{ configuration?.customer?.dealId }}</td>
               </tr>
             </table>
@@ -128,7 +124,7 @@
                       @if (value.value) {
                         <img [src]="value.value.url" alt="afbeelding">
                       } @else {
-                        <div class="empty">Geen handtekening</div>
+                        <div class="empty" i18n="@@config.no_signature">Geen handtekening</div>
                       }
                     }
                     @default {
@@ -163,14 +159,14 @@
           }
         } @empty {
           <div class="form-section">
-            <div class="empty">
+            <div class="empty" i18n="@@config.empty">
               Nog niks geconfigureerd
             </div>
           </div>
         }
         @if (configuration?.preview?.approval?.value) {
           <div class="section">
-            <h2 class="break">Goedkeuring</h2>
+            <h2 class="break" i18n="@@config.approval_section">Goedkeuring</h2>
             <img [src]="configuration?.preview?.approval?.value" alt="afbeelding">
           </div>
         }
