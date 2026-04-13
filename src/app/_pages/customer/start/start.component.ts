@@ -64,7 +64,7 @@ export class StartComponent implements OnInit {
       this.slides = [
         {
           src: 'https://www.ambassa.nl/wp-content/uploads/sites/3/2024/03/Garagedeur-goede-kwaliteit.jpg',
-          title: 'Mijn Configuraties',
+          title: $localize`:@@nav.my_configuration:Mijn configuratie`,
           href: `/customers/${this.id}/configurations`
         },
       ]
@@ -73,7 +73,7 @@ export class StartComponent implements OnInit {
       this.slides = [
         {
           src: '/assets/images/carousel/Portal-configuraties-DD.jpg',
-          title: 'Mijn configuratie',
+          title: $localize`:@@nav.my_configuration:Mijn configuratie`,
           href: `/customers/${this.id}/configurations`
         },
       ];
@@ -94,7 +94,7 @@ export class StartComponent implements OnInit {
             if (c?.properties?.available_statuses?.includes('DD Aanlevering van delen')) {
               this.slides.splice(1, 0, {
                 src: '/assets/images/carousel/Portal-delen-aanleveren-DD.jpg',
-                title: 'Delen aanleveren',
+                title: $localize`:@@delen.title:Delen aanleveren`,
                 href: `/customers/${this.id}/delen`
               })
             }
@@ -111,26 +111,26 @@ export class StartComponent implements OnInit {
   addSlidesBasedOnEnvironment() {
     if (this.themeService.theme$.getValue().name == "ambassa-theme") {
       this.slides.push({
-          src: 'https://www.ambassa.nl/wp-content/uploads/sites/3/2024/03/Isolatie-houten-openslaande-garagedeur.jpg',
-          title: 'Service & veelgestelde vragen',
-          href: `https://www.ambassa.nl/service-aanvragen/`,
-          external: true
-        })
+        src: 'https://www.ambassa.nl/wp-content/uploads/sites/3/2024/03/Isolatie-houten-openslaande-garagedeur.jpg',
+        title: $localize`:@@slide.service_faq:Service & veelgestelde vragen`,
+        href: `https://www.ambassa.nl/service-aanvragen/`,
+        external: true
+      })
     } else {
       this.slides.push(...[{
         src: '/assets/images/carousel/Portal-onderhoud-DD.png',
-        title: 'Onderhoud & Service',
+        title: $localize`:@@slide.maintenance:Onderhoud & Service`,
         href: `https://www.differentdoors.nl/over-ons/service`,
         external: true
       },
         {
           src: '/assets/images/carousel/Portal-documenten-DD.jpg',
-          title: 'Belangrijke documenten',
+          title: $localize`:@@documents.title:Belangrijke documenten`,
           href: `/customers/${this.id}/documents`
         },
         {
           src: '/assets/images/carousel/Portal-veelgesteldevragen-DD.jpg',
-          title: 'Veelgestelde vragen',
+          title: $localize`:@@faq.title:Veelgestelde vragen`,
           href: `/customers/${this.id}/faq`
         },])
     }

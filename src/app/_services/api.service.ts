@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {inject, Injectable, LOCALE_ID} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {ICustomer} from "../_models/customer.interface";
 import {IConfiguration} from "../_models/configuration.interface";
@@ -12,12 +12,15 @@ import {IConfigChanges} from "../_models/configuration-change.interface";
   providedIn: 'root'
 })
 export class ApiService {
+  private lang = inject(LOCALE_ID).split('-')[0];
 
   constructor(private http: HttpClient) {
   }
 
   getStatuses() {
-    return this.http.get<IStatus[]>(`${environment.apiUrl}/public/customer/statuses`);
+    return this.http.get<IStatus[]>(`${environment.apiUrl}/public/customer/statuses`, {
+      params: { lang: this.lang }
+    });
   }
 
   getFAQ() {

@@ -230,6 +230,16 @@
         <source>Nog geen werkbonnen</source>
         <target>No work orders yet</target>
       </trans-unit>
+
+      <!-- Slide titles (TypeScript $localize) -->
+      <trans-unit id="slide.service_faq" datatype="html">
+        <source>Service &amp; veelgestelde vragen</source>
+        <target>Service &amp; frequently asked questions</target>
+      </trans-unit>
+      <trans-unit id="slide.maintenance" datatype="html">
+        <source>Onderhoud &amp; Service</source>
+        <target>Maintenance &amp; Service</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
