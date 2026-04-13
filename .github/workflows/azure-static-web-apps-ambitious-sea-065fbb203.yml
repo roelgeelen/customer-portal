@@ -25,7 +25,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Build all locales
         run: npm run build:all
       - name: Build And Deploy
@@ -38,6 +38,7 @@ jobs:
           app_location: "/"
           api_location: ""
           output_location: "dist/customer-portal/browser"
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
