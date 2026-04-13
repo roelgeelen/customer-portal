@@ -3,7 +3,19 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npx ng:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(gh run:*)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(winget install:*)",
+      "Bash(where gh:*)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh auth:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); proj=d['projects']['customer-portal']; print\\('outputPath:', proj['architect']['build']['options'].get\\('outputPath'\\)\\); print\\('i18n:', json.dumps\\(proj.get\\('i18n'\\), indent=2\\)\\); print\\('configs:', list\\(proj['architect']['build']['configurations'].keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); configs=d['projects']['customer-portal']['architect']['build']['configurations']; print\\('nl config:', json.dumps\\(configs.get\\('nl'\\), indent=2\\)\\); print\\('en config:', json.dumps\\(configs.get\\('en'\\), indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); routes=d['projects']['customer-portal']['architect']['build']['options']; print\\(json.dumps\\(routes, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); configs=d['projects']['customer-portal']['architect']['build']['configurations']; print\\(json.dumps\\(configs.get\\('nl'\\), indent=2\\)\\); print\\('---'\\); print\\(json.dumps\\(configs.get\\('en'\\), indent=2\\)\\)\")",
+      "Bash(python3 -c ':*)"
     ]
   }
 }
