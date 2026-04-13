@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Wijzigingen na akkoord</h1>
+<h1 mat-dialog-title i18n="@@changes_dialog.title">Wijzigingen na akkoord</h1>
 <div mat-dialog-content #dialog>
   @if (changes$| async; as list) {
     @for (change of list; track change) {
@@ -24,7 +24,7 @@
         </div>
       </div>
     } @empty {
-      Geen wijzigingen gevonden
+      <span i18n="@@changes_dialog.empty">Geen wijzigingen gevonden</span>
     }
 
   } @else {

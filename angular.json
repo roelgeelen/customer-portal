@@ -13,6 +13,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": {
+          "code": "nl",
+          "baseHref": "/nl/"
+        },
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -21,7 +33,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -64,6 +77,12 @@
               ],
               "outputHashing": "all"
             },
+            "nl": {
+              "localize": ["nl"]
+            },
+            "en": {
+              "localize": ["en"]
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -80,6 +99,9 @@
             },
             "development": {
               "buildTarget": "customer-portal:build:development"
+            },
+            "en": {
+              "buildTarget": "customer-portal:build:development,en"
             }
           },
           "defaultConfiguration": "development"

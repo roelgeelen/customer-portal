@@ -9,6 +9,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
 import {AuthenticationService} from "../../_helpers/authentication.service";
 import {IDeal} from "../../_models/deal.interface";
+import {LocaleService} from "../../_helpers/locale.service";
 
 @Component({
   selector: 'app-customer',
@@ -32,7 +33,7 @@ export class CustomerComponent implements OnInit {
   isExtern: boolean = false;
   deal: IDeal | null = null;
 
-  constructor(protected themeService: ThemeService, private route: ActivatedRoute, private authService: AuthenticationService) {
+  constructor(protected themeService: ThemeService, private route: ActivatedRoute, private authService: AuthenticationService, protected localeService: LocaleService) {
     this.isExtern = localStorage.getItem('extern') === '1';
     this.route.children.forEach(child => {
       child.params.subscribe(params => {

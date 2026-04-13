@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="nl" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="config_list.title_extern" datatype="html">
+        <source>Bekijk hier de configuraties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">9,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.title_customer" datatype="html">
+        <source>Bekijk hier uw configuraties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.col_configuration" datatype="html">
+        <source>Configuratie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.col_last_modified" datatype="html">
+        <source>Laatst aangepast</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.mobile_last_modified" datatype="html">
+        <source>Laatst aangepast:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.col_modified_by" datatype="html">
+        <source>Aangepast door</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.mobile_modified_by" datatype="html">
+        <source>Aangepast door:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.open_button" datatype="html">
+        <source>Open configuratie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">52,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.load_error" datatype="html">
+        <source>Kon configuraties niet ophalen, probeer het opnieuw:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config_list.empty" datatype="html">
+        <source>Nog geen configuraties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration-list/configuration-list.component.html</context>
+          <context context-type="linenumber">70,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.title" datatype="html">
+        <source>Ondertekenen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.name_label" datatype="html">
+        <source>Naam</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.name_required" datatype="html">
+        <source>Naam is verplicht</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">9,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.signature_label" datatype="html">
+        <source>Handtekening</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.save_button" datatype="html">
+        <source>Opslaan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_dialog.clear_button" datatype="html">
+        <source>Wissen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/approval-dialog/approval-dialog.component.html</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changes_dialog.title" datatype="html">
+        <source>Wijzigingen na akkoord</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/changes-dialog/changes-dialog.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changes_dialog.empty" datatype="html">
+        <source>Geen wijzigingen gevonden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/changes-dialog/changes-dialog.component.html</context>
+          <context context-type="linenumber">27,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.approved" datatype="html">
+        <source>Goedgekeurd</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.sign" datatype="html">
+        <source>Ondertekenen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.all_configurations" datatype="html">
+        <source>Alle configuraties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">26,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.filled_by" datatype="html">
+        <source>Ingevuld door</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.reference" datatype="html">
+        <source>Referentie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.no_signature" datatype="html">
+        <source>Geen handtekening</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">127,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.empty" datatype="html">
+        <source> Nog niks geconfigureerd </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">163,164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="config.approval_section" datatype="html">
+        <source>Goedkeuring</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/configuration/configuration.component.html</context>
+          <context context-type="linenumber">169,170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.home" datatype="html">
+        <source>Startpagina</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.my_configuration" datatype="html">
+        <source>Mijn configuratie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.configurations" datatype="html">
+        <source>Configuraties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.work_orders" datatype="html">
+        <source>Werkbonnen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">59,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav.internal" datatype="html">
+        <source>Intern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.privacy" datatype="html">
+        <source>Privacy policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">92,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footer.terms" datatype="html">
+        <source>Algemene voorwaarden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/customer.component.html</context>
+          <context context-type="linenumber">95,97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="delen.title" datatype="html">
+        <source>Delen aanleveren</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/delen/delen.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="delen.description" datatype="html">
+        <source> Wanneer er aangeleverde delen zijn, dienen deze eerst geleverd te worden voordat het tekenwerk opgestart kan worden.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Dit is belangrijk omdat deze delen niet maatvast zijn.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Pas wanneer wij de delen definitief binnen hebben, wordt het tekenwerk opgestart.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Download onderstaand document met alle informatie omtrent het aanleveren van delen.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> En we verzoeken je vriendelijk om het formulier in de bijlage toe te voegen bij de aan te leveren delen. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/delen/delen.component.html</context>
+          <context context-type="linenumber">6,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="delen.file_name" datatype="html">
+        <source> Aandachtspunten aanleveren buitenbekleding.pdf </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/delen/delen.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="documents.title" datatype="html">
+        <source>Belangrijke documenten</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/documents/documents.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="documents.description" datatype="html">
+        <source> Hier vind je alle belangrijke documenten die van toepassing zijn op een correcte voortgang van jouw project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Je kunt deze gemakkelijk downloaden als PDF bestand. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/documents/documents.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="documents.file1_name" datatype="html">
+        <source> Belangrijke informatie ter voorbereiding van de montagedag.pdf </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/documents/documents.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="documents.file2_name" datatype="html">
+        <source> Aandachtspunten aanleveren buitenbekleding.pdf </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/documents/documents.component.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faq.title" datatype="html">
+        <source>Veelgestelde vragen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/faq/faq.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faq.description" datatype="html">
+        <source>Een vraag over jouw project of werkwijze? Hier vind je de antwoorden op de meest gestelde vragen.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Staat jouw vraag er niet tussen? Bel of mail gerust – wij staan voor je klaar.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/faq/faq.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.status_error" datatype="html">
+        <source>Kon de huidige status niet ophalen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.status_title" datatype="html">
+        <source>Status van jouw project</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.status_description" datatype="html">
+        <source> Hieronder volg je eenvoudig de status van jouw project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Het stappenplan biedt direct inzicht in waar we ons in het proces bevinden, welke taken zijn afgerond en wat de volgende stappen zijn.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Zo ben je altijd volledig geïnformeerd over de voortgang. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.contacts_title" datatype="html">
+        <source>Uw contactpersonen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.more_info_title" datatype="html">
+        <source>Meer informatie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start.more_info_description" datatype="html">
+        <source> Naast de voortgang van je project, vind je hier ook alle belangrijke details en documentatie. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Bekijk de specificaties van de door jou gekozen garagedeur of raadpleeg onze veelgestelde vragen. Alles handig gebundeld op één plek. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/_pages/customer/start/start.component.html</context>
+          <context context-type="linenumber">94,96</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="nl" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="config_list.title_extern" datatype="html">
+        <source>Bekijk hier de configuraties</source>
+        <target>View the configurations here</target>
+      </trans-unit>
+      <trans-unit id="config_list.title_customer" datatype="html">
+        <source>Bekijk hier uw configuraties</source>
+        <target>View your configurations here</target>
+      </trans-unit>
+      <trans-unit id="config_list.col_configuration" datatype="html">
+        <source>Configuratie</source>
+        <target>Configuration</target>
+      </trans-unit>
+      <trans-unit id="config_list.col_last_modified" datatype="html">
+        <source>Laatst aangepast</source>
+        <target>Last modified</target>
+      </trans-unit>
+      <trans-unit id="config_list.mobile_last_modified" datatype="html">
+        <source>Laatst aangepast:</source>
+        <target>Last modified:</target>
+      </trans-unit>
+      <trans-unit id="config_list.col_modified_by" datatype="html">
+        <source>Aangepast door</source>
+        <target>Modified by</target>
+      </trans-unit>
+      <trans-unit id="config_list.mobile_modified_by" datatype="html">
+        <source>Aangepast door:</source>
+        <target>Modified by:</target>
+      </trans-unit>
+      <trans-unit id="config_list.open_button" datatype="html">
+        <source>Open configuratie</source>
+        <target>Open configuration</target>
+      </trans-unit>
+      <trans-unit id="config_list.load_error" datatype="html">
+        <source>Kon configuraties niet ophalen, probeer het opnieuw:</source>
+        <target>Could not load configurations, please try again:</target>
+      </trans-unit>
+      <trans-unit id="config_list.empty" datatype="html">
+        <source>Nog geen configuraties</source>
+        <target>No configurations yet</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.title" datatype="html">
+        <source>Ondertekenen</source>
+        <target>Sign</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.name_label" datatype="html">
+        <source>Naam</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.name_required" datatype="html">
+        <source>Naam is verplicht</source>
+        <target>Name is required</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.signature_label" datatype="html">
+        <source>Handtekening</source>
+        <target>Signature</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.save_button" datatype="html">
+        <source>Opslaan</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="approval_dialog.clear_button" datatype="html">
+        <source>Wissen</source>
+        <target>Clear</target>
+      </trans-unit>
+      <trans-unit id="changes_dialog.title" datatype="html">
+        <source>Wijzigingen na akkoord</source>
+        <target>Changes after approval</target>
+      </trans-unit>
+      <trans-unit id="changes_dialog.empty" datatype="html">
+        <source>Geen wijzigingen gevonden</source>
+        <target>No changes found</target>
+      </trans-unit>
+      <trans-unit id="config.approved" datatype="html">
+        <source>Goedgekeurd</source>
+        <target>Approved</target>
+      </trans-unit>
+      <trans-unit id="config.sign" datatype="html">
+        <source>Ondertekenen</source>
+        <target>Sign</target>
+      </trans-unit>
+      <trans-unit id="config.all_configurations" datatype="html">
+        <source>Alle configuraties</source>
+        <target>All configurations</target>
+      </trans-unit>
+      <trans-unit id="config.filled_by" datatype="html">
+        <source>Ingevuld door</source>
+        <target>Filled in by</target>
+      </trans-unit>
+      <trans-unit id="config.reference" datatype="html">
+        <source>Referentie</source>
+        <target>Reference</target>
+      </trans-unit>
+      <trans-unit id="config.no_signature" datatype="html">
+        <source>Geen handtekening</source>
+        <target>No signature</target>
+      </trans-unit>
+      <trans-unit id="config.empty" datatype="html">
+        <source> Nog niks geconfigureerd </source>
+        <target> Nothing configured yet </target>
+      </trans-unit>
+      <trans-unit id="config.approval_section" datatype="html">
+        <source>Goedkeuring</source>
+        <target>Approval</target>
+      </trans-unit>
+      <trans-unit id="nav.home" datatype="html">
+        <source>Startpagina</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="nav.my_configuration" datatype="html">
+        <source>Mijn configuratie</source>
+        <target>My configuration</target>
+      </trans-unit>
+      <trans-unit id="nav.configurations" datatype="html">
+        <source>Configuraties</source>
+        <target>Configurations</target>
+      </trans-unit>
+      <trans-unit id="nav.work_orders" datatype="html">
+        <source>Werkbonnen</source>
+        <target>Work orders</target>
+      </trans-unit>
+      <trans-unit id="nav.internal" datatype="html">
+        <source>Intern</source>
+        <target>Internal</target>
+      </trans-unit>
+      <trans-unit id="footer.privacy" datatype="html">
+        <source>Privacy policy</source>
+        <target>Privacy policy</target>
+      </trans-unit>
+      <trans-unit id="footer.terms" datatype="html">
+        <source>Algemene voorwaarden</source>
+        <target>Terms and conditions</target>
+      </trans-unit>
+      <trans-unit id="delen.title" datatype="html">
+        <source>Delen aanleveren</source>
+        <target>Supplying parts</target>
+      </trans-unit>
+      <trans-unit id="delen.description" datatype="html">
+        <source> Wanneer er aangeleverde delen zijn, dienen deze eerst geleverd te worden voordat het tekenwerk opgestart kan worden.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Dit is belangrijk omdat deze delen niet maatvast zijn.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Pas wanneer wij de delen definitief binnen hebben, wordt het tekenwerk opgestart.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Download onderstaand document met alle informatie omtrent het aanleveren van delen.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> En we verzoeken je vriendelijk om het formulier in de bijlage toe te voegen bij de aan te leveren delen. </source>
+        <target> When parts are to be supplied, these must first be delivered before the drawing work can be started.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This is important because these parts are not dimensionally stable.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Only when we have definitively received the parts will the drawing work be started.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Download the document below with all information regarding the supply of parts.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> We kindly request you to include the form in the attachment with the parts to be supplied. </target>
+      </trans-unit>
+      <trans-unit id="delen.file_name" datatype="html">
+        <source> Aandachtspunten aanleveren buitenbekleding.pdf </source>
+        <target> Points of attention for supplying exterior cladding.pdf </target>
+      </trans-unit>
+      <trans-unit id="documents.title" datatype="html">
+        <source>Belangrijke documenten</source>
+        <target>Important documents</target>
+      </trans-unit>
+      <trans-unit id="documents.description" datatype="html">
+        <source> Hier vind je alle belangrijke documenten die van toepassing zijn op een correcte voortgang van jouw project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Je kunt deze gemakkelijk downloaden als PDF bestand. </source>
+        <target> Here you will find all important documents that apply to the correct progress of your project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> You can easily download these as a PDF file. </target>
+      </trans-unit>
+      <trans-unit id="documents.file1_name" datatype="html">
+        <source> Belangrijke informatie ter voorbereiding van de montagedag.pdf </source>
+        <target> Important information in preparation for the installation day.pdf </target>
+      </trans-unit>
+      <trans-unit id="documents.file2_name" datatype="html">
+        <source> Aandachtspunten aanleveren buitenbekleding.pdf </source>
+        <target> Points of attention for supplying exterior cladding.pdf </target>
+      </trans-unit>
+      <trans-unit id="faq.title" datatype="html">
+        <source>Veelgestelde vragen</source>
+        <target>Frequently asked questions</target>
+      </trans-unit>
+      <trans-unit id="faq.description" datatype="html">
+        <source>Een vraag over jouw project of werkwijze? Hier vind je de antwoorden op de meest gestelde vragen.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Staat jouw vraag er niet tussen? Bel of mail gerust – wij staan voor je klaar.</source>
+        <target>A question about your project or working method? Here you will find the answers to the most frequently asked questions.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Is your question not listed? Feel free to call or email us – we are here for you.</target>
+      </trans-unit>
+      <trans-unit id="start.status_error" datatype="html">
+        <source>Kon de huidige status niet ophalen</source>
+        <target>Could not retrieve the current status</target>
+      </trans-unit>
+      <trans-unit id="start.status_title" datatype="html">
+        <source>Status van jouw project</source>
+        <target>Status of your project</target>
+      </trans-unit>
+      <trans-unit id="start.status_description" datatype="html">
+        <source> Hieronder volg je eenvoudig de status van jouw project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Het stappenplan biedt direct inzicht in waar we ons in het proces bevinden, welke taken zijn afgerond en wat de volgende stappen zijn.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Zo ben je altijd volledig geïnformeerd over de voortgang. </source>
+        <target> Below you can easily follow the status of your project.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> The step-by-step plan provides direct insight into where we are in the process, which tasks have been completed and what the next steps are.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> This way you are always fully informed about the progress. </target>
+      </trans-unit>
+      <trans-unit id="start.contacts_title" datatype="html">
+        <source>Uw contactpersonen</source>
+        <target>Your contacts</target>
+      </trans-unit>
+      <trans-unit id="start.more_info_title" datatype="html">
+        <source>Meer informatie</source>
+        <target>More information</target>
+      </trans-unit>
+      <trans-unit id="start.more_info_description" datatype="html">
+        <source> Naast de voortgang van je project, vind je hier ook alle belangrijke details en documentatie. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Bekijk de specificaties van de door jou gekozen garagedeur of raadpleeg onze veelgestelde vragen. Alles handig gebundeld op één plek. </source>
+        <target> In addition to the progress of your project, you will also find all important details and documentation here. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>View the specifications of your chosen garage door or consult our frequently asked questions. Everything conveniently bundled in one place. </target>
+      </trans-unit>
+      <trans-unit id="history.title" datatype="html">
+        <source>Historie</source>
+        <target>History</target>
+      </trans-unit>
+      <trans-unit id="history.col_work_order" datatype="html">
+        <source>Werkbon</source>
+        <target>Work order</target>
+      </trans-unit>
+      <trans-unit id="history.col_created_at" datatype="html">
+        <source>Aanmaakdatum</source>
+        <target>Created on</target>
+      </trans-unit>
+      <trans-unit id="history.col_created_by" datatype="html">
+        <source>Aangemaakt door</source>
+        <target>Created by</target>
+      </trans-unit>
+      <trans-unit id="history.mobile_created_at" datatype="html">
+        <source>Aangemaakt op:</source>
+        <target>Created on:</target>
+      </trans-unit>
+      <trans-unit id="history.mobile_created_by" datatype="html">
+        <source>Aangemaakt door:</source>
+        <target>Created by:</target>
+      </trans-unit>
+      <trans-unit id="history.open_button" datatype="html">
+        <source>Open werkbon</source>
+        <target>Open work order</target>
+      </trans-unit>
+      <trans-unit id="history.load_error" datatype="html">
+        <source>Kon werkbonnen niet ophalen, probeer het opnieuw:</source>
+        <target>Could not load work orders, please try again:</target>
+      </trans-unit>
+      <trans-unit id="history.empty" datatype="html">
+        <source>Nog geen werkbonnen</source>
+        <target>No work orders yet</target>
+      </trans-unit>
+
+      <!-- Slide titles (TypeScript $localize) -->
+      <trans-unit id="slide.service_faq" datatype="html">
+        <source>Service &amp; veelgestelde vragen</source>
+        <target>Service &amp; frequently asked questions</target>
+      </trans-unit>
+      <trans-unit id="slide.maintenance" datatype="html">
+        <source>Onderhoud &amp; Service</source>
+        <target>Maintenance &amp; Service</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
