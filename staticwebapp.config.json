@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "redirect": "/nl/",
+      "statusCode": 302
+    },
+    {
+      "route": "/en",
+      "redirect": "/en/",
+      "statusCode": 301
+    },
+    {
+      "route": "/nl",
+      "redirect": "/nl/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/customers/*",
+      "rewrite": "/en/index.html"
+    },
+    {
+      "route": "/en/",
+      "rewrite": "/en/index.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/nl/index.html"
+  }
+}
