@@ -16,8 +16,24 @@
       "statusCode": 301
     },
     {
+      "route": "/nl/",
+      "rewrite": "/nl/index.html"
+    },
+    {
+      "route": "/en/",
+      "rewrite": "/en/index.html"
+    },
+    {
+      "route": "/nl/customers/*",
+      "rewrite": "/nl/index.html"
+    },
+    {
       "route": "/en/customers/*",
       "rewrite": "/en/index.html"
+    },
+    {
+      "route": "/customers/*",
+      "rewrite": "/nl/index.html"
     }
   ],
   "navigationFallback": {
