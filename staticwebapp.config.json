@@ -6,16 +6,6 @@
       "statusCode": 302
     },
     {
-      "route": "/nl",
-      "redirect": "/nl/",
-      "statusCode": 301
-    },
-    {
-      "route": "/en",
-      "redirect": "/en/",
-      "statusCode": 301
-    },
-    {
       "route": "/nl/",
       "rewrite": "/nl/index.html"
     },
