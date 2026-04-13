@@ -78,10 +78,15 @@
               "outputHashing": "all"
             },
             "nl": {
-              "localize": ["nl"]
+              "localize": [
+                "nl"
+              ]
             },
             "en": {
-              "localize": ["en"]
+              "localize": [
+                "en"
+              ],
+              "deleteOutputPath": false
             },
             "development": {
               "optimization": false,

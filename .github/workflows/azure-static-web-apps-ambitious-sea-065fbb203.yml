@@ -30,16 +30,8 @@ jobs:
         run: npm run build:all
       - name: Prepare deployment artifacts
         run: |
-          # Angular outputs source locale (nl) to browser/ root, not browser/nl/
-          # Reorganize: move nl files to browser/nl/, keep browser/en/ in place
-          mv dist/customer-portal/browser/en /tmp/en-build
-          mv dist/customer-portal/browser dist/customer-portal/browser-nl
-          mkdir -p dist/customer-portal/browser
-          mv dist/customer-portal/browser-nl dist/customer-portal/browser/nl
-          mv /tmp/en-build dist/customer-portal/browser/en
-          # Root redirect and config
-          printf '<meta http-equiv="refresh" content="0;url=/nl/">' > dist/customer-portal/browser/index.html
           cp staticwebapp.config.json dist/customer-portal/browser/
+          printf '<meta http-equiv="refresh" content="0;url=/nl/">' > dist/customer-portal/browser/index.html
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
