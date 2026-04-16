@@ -10,6 +10,7 @@ export interface IConfiguration {
       name?: string;
       date?: string;
       value?: string;
+      remark?: string;
     };
   };
   values?: IConfigurationItem[];

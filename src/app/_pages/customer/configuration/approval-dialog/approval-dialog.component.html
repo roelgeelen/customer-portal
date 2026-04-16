@@ -1,6 +1,6 @@
 <h1 mat-dialog-title i18n="@@approval_dialog.title">Ondertekenen</h1>
 <div mat-dialog-content #dialog>
-  <form (ngSubmit)="sign(signName.value)">
+  <form (ngSubmit)="sign(signName.value, remark.value)">
     <mat-form-field class="field">
       <mat-label i18n="@@approval_dialog.name_label">Naam</mat-label>
       <input #signName="ngModel" ngModel matInput type="text"
@@ -8,6 +8,10 @@
       @if (signName.invalid) {
         <mat-error i18n="@@approval_dialog.name_required">Naam is verplicht</mat-error>
       }
+    </mat-form-field>
+    <mat-form-field class="field">
+      <mat-label i18n="@@approval_dialog.remark_label">Opmerking</mat-label>
+      <textarea #remark="ngModel" ngModel matInput [ngModelOptions]="{standalone: true}" rows="3"></textarea>
     </mat-form-field>
     <div class="label" i18n="@@approval_dialog.signature_label">Handtekening</div>
     <signature-pad #signature [options]="signaturePadOptions"></signature-pad>

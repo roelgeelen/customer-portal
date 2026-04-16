@@ -54,6 +54,10 @@
         <source>Naam is verplicht</source>
         <target>Name is required</target>
       </trans-unit>
+      <trans-unit id="approval_dialog.remark_label" datatype="html">
+        <source>Opmerking</source>
+        <target>Remark</target>
+      </trans-unit>
       <trans-unit id="approval_dialog.signature_label" datatype="html">
         <source>Handtekening</source>
         <target>Signature</target>
@@ -105,6 +109,10 @@
       <trans-unit id="config.approval_section" datatype="html">
         <source>Goedkeuring</source>
         <target>Approval</target>
+      </trans-unit>
+      <trans-unit id="config.approval_remark" datatype="html">
+        <source>Opmerking</source>
+        <target>Remark</target>
       </trans-unit>
       <trans-unit id="nav.home" datatype="html">
         <source>Startpagina</source>

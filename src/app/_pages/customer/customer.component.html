@@ -43,9 +43,7 @@
             </button>
             <mat-menu #menu="matMenu">
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}" routerLinkActive="selected" i18n="@@nav.home">
-                  Startpagina
-                </a>
+                <a mat-menu-item routerLink="/customers/{{id}}" routerLinkActive="selected" i18n="@@nav.home">Startpagina</a>
               }
               <a mat-menu-item routerLink="/customers/{{id}}/configurations" routerLinkActive="selected">
                 @if (isCustomer) {
@@ -55,9 +53,7 @@
                 }
               </a>
               @if (isCustomer) {
-                <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected" i18n="@@nav.work_orders">
-                  Werkbonnen
-                </a>
+                <a mat-menu-item routerLink="/customers/{{id}}/history" routerLinkActive="selected" i18n="@@nav.work_orders">Werkbonnen</a>
               }
             </mat-menu>
           </div>

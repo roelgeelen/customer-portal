@@ -39,7 +39,7 @@
               <mat-cell *matCellDef="let element">
                 @if (element.preview?.approval != undefined) {
                   @if (element?.preview?.approval?.name) {
-                    <mat-icon class="success">check_circle_outlined</mat-icon>
+                    <mat-icon class="success" matTooltipPosition="above" [matTooltip]="(element?.preview?.approval?.date|date:'dd-MM-yyyy') + ' - '+ (element?.preview?.approval?.name ?? '')">check_circle_outlined</mat-icon>
                   } @else {
                     <mat-icon class="warning">warning</mat-icon>
                   }

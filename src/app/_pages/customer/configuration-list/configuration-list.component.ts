@@ -23,6 +23,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
 import {MatStepper, MatStepperModule} from "@angular/material/stepper";
 import {AuthenticationService} from "../../../_helpers/authentication.service";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-configuration-list',
@@ -43,7 +44,8 @@ import {AuthenticationService} from "../../../_helpers/authentication.service";
     MatIconModule,
     DatePipe,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltip
   ],
   templateUrl: './configuration-list.component.html',
   styleUrl: './configuration-list.component.scss'

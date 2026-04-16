@@ -51,10 +51,11 @@ export class ApiService {
     return this.http.get<any>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}/changes`);
   }
 
-  saveSignature(id: string|undefined, configId: string, file: string, name: string) {
+  saveSignature(id: string|undefined, configId: string, file: string, name: string, remark: string = '') {
     const formData: FormData = new FormData();
     formData.append('file', file);
     formData.append('name', name);
+    formData.append('remark', remark);
     return this.http.post<IConfiguration>(`${environment.apiUrl}/public/customer/${id}/configurations/${configId}/sign`, formData, {
       reportProgress: true,
       observe: 'events'

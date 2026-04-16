@@ -8,7 +8,7 @@
   @if (configuration?.preview?.approval != undefined) {
     @if (configuration?.preview?.approval?.name != undefined) {
       <div class="customer-approval"
-           [matTooltip]="(configuration?.preview?.approval?.date|date:'yyyy-MM-dd') + ' - '+ (configuration?.preview?.approval?.name ?? '')">
+           [matTooltip]="(configuration?.preview?.approval?.date|date:'dd-MM-yyyy') + ' - '+ (configuration?.preview?.approval?.name ?? '')">
         <mat-icon>check</mat-icon>
         <span i18n="@@config.approved">Goedgekeurd</span>
       </div>
@@ -165,9 +165,17 @@
           </div>
         }
         @if (configuration?.preview?.approval?.value) {
-          <div class="section">
+          <div class="section customer-signature">
             <h2 class="break" i18n="@@config.approval_section">Goedkeuring</h2>
-            <img [src]="configuration?.preview?.approval?.value" alt="afbeelding">
+            <div class="signature-container">
+              <img [src]="configuration?.preview?.approval?.value" alt="afbeelding">
+              @if (configuration?.preview?.approval?.remark) {
+                <div class="remark-bubble">
+                  <span class="remark-label" i18n="@@config.approval_remark">Opmerking</span>
+                  <p>{{ configuration?.preview?.approval?.remark }}</p>
+                </div>
+              }
+            </div>
           </div>
         }
       } @placeholder {

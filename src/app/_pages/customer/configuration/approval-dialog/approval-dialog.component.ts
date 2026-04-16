@@ -53,11 +53,11 @@ export class ApprovalDialogComponent {
     this.signaturePad?.clear();
   }
 
-  sign(name: string) {
+  sign(name: string, remark: string) {
     const base64Data = this.signaturePad?.toDataURL('base64');
     if (name != '') {
       this.loading = true;
-      this.apiService.saveSignature(this.data.customer.id, this.data.id!, base64Data!, name).subscribe({
+      this.apiService.saveSignature(this.data.customer.id, this.data.id!, base64Data!, name, remark).subscribe({
         next: (data: any) => {
           if (data instanceof HttpResponse) {
            this.loading = false;
